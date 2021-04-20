@@ -26,7 +26,7 @@
     <nav>
         <div class="wrapper">
             <h2>On This Page</h2>
-            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#ifletstore.init(_:then:else:)">init(_:​then:​else:​)</a></li><li class="initializer"><a href="#ifletstore.init(_:then:)">init(_:​then:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#ifletstore.body">body</a></li></ul></li></ol>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#ifletstore.init(_:then:else:)">init(_:​then:​else:​)</a></li><li class="initializer"><a href="#ifletstore.init(_:then:else:)">init(_:​then:​else:​)</a></li><li class="initializer"><a href="#ifletstore.init(_:then:)">init(_:​then:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#ifletstore.body">body</a></li></ul></li></ol>
         </div>
     </nav>
 
@@ -51,7 +51,7 @@ holds onto non-optional state, and otherwise the <code>else</code> closure will 
 <html><body><pre class="highlight"><code><span class="variable">IfLetStore</span>(
   <span class="variable">store</span>.<span class="type">scope</span>(<span class="variable">state</span>: \<span class="variable">SearchState</span>.<span class="type">results</span>, <span class="variable">action</span>: <span class="type">SearchAction</span>.<span class="type">results</span>),
   <span class="variable">then</span>: <span class="type">SearchResultsView</span>.<span class="type">init</span>(<span class="variable">store</span>:),
-  <span class="variable">else</span>: <span class="type">Text</span>(<span class="string literal">"</span><span class="string literal">Loading search results...</span><span class="string literal">"</span>)
+  <span class="variable">else</span>: { <span class="variable">Text</span>(<span class="string literal">"</span><span class="string literal">Loading search results...</span><span class="string literal">"</span>) }
 )
 </code></pre></body></html>
 <p>And for performing navigation when a piece of state becomes non-<code>nil</code>:</p>
@@ -123,7 +123,13 @@ holds onto non-optional state, and otherwise the <code>else</code> closure will 
     <h3>
         <code>init(_:​then:​else:​)</code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">IfContent</span>, <span class="variable">ElseContent</span>&gt;(<span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>?, <span class="type">Action</span>&gt;, <span class="variable">then</span> <span class="variable">ifContent</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;) -&gt; <span class="type">IfContent</span>, <span class="variable">else</span> <span class="variable">elseContent</span>: <span class="attribute">@</span><span class="attribute">escaping</span> <span class="attribute">@</span><span class="attribute">autoclosure</span> () -&gt; <span class="type">ElseContent</span>) <span class="keyword">where</span> <span class="type">Content</span> == <span class="type">_ConditionalContent</span>&lt;<span class="type">IfContent</span>, <span class="type">ElseContent</span>&gt;</code></pre></body></html>
+    <html><body><pre class="highlight"><code><span class="attribute">@</span><span class="attribute">available</span>(*, <span class="variable">deprecated</span>, <span class="variable">message</span>: <span class="string literal">"'else' now takes a view builder closure"</span>) <span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">IfContent</span>, <span class="variable">ElseContent</span>&gt;(<span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>?, <span class="type">Action</span>&gt;, <span class="variable">then</span> <span class="variable">ifContent</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;) -&gt; <span class="type">IfContent</span>, <span class="variable">else</span> <span class="variable">elseContent</span>: <span class="attribute">@</span><span class="attribute">escaping</span> <span class="attribute">@</span><span class="attribute">autoclosure</span> () -&gt; <span class="type">ElseContent</span>) <span class="keyword">where</span> <span class="type">Content</span> == <span class="type">_ConditionalContent</span>&lt;<span class="type">IfContent</span>, <span class="type">ElseContent</span>&gt;</code></pre></body></html>
+</div>
+<div role="article" class="initializer" id="ifletstore.init(_:then:else:)">
+    <h3>
+        <code>init(_:​then:​else:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">IfContent</span>, <span class="variable">ElseContent</span>&gt;(<span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>?, <span class="type">Action</span>&gt;, <span class="variable">then</span> <span class="variable">ifContent</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;) -&gt; <span class="type">IfContent</span>, <span class="variable">else</span> <span class="variable">elseContent</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">ElseContent</span>) <span class="keyword">where</span> <span class="type">Content</span> == <span class="type">_ConditionalContent</span>&lt;<span class="type">IfContent</span>, <span class="type">ElseContent</span>&gt;</code></pre></body></html>
 <div class="summary" role="doc-abstract">
     <p>Initializes an <code>IfLetStore</code> view that computes content depending on if a store of optional
 state is <code>nil</code> or non-<code>nil</code>.</p>
@@ -154,7 +160,7 @@ state is <code>nil</code> or non-<code>nil</code>.</p>
 </tr>
 <tr>
     <th>else​Content</th>
-    <td><code class="type">@escaping @autoclosure () -&gt; Else​Content</code></td>
+    <td><code class="type">@escaping () -&gt; Else​Content</code></td>
     <td><p>A view that is only visible when the optional state is <code>nil</code>.</p>
 </td>
 </tr>
@@ -216,7 +222,7 @@ state is <code>nil</code> or non-<code>nil</code>.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-03-22T18:02:14+0000">March 22, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+    Generated on <time datetime="2021-04-20T17:09:10+0000">April 20, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
 </p>
     </footer>
 </body>
