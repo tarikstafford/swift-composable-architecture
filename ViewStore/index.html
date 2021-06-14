@@ -14,7 +14,6 @@
             </strong>
             <span>Documentation</span>
         </a>
-        <sup>Beta</sup>
     </header>
 
     <!--
@@ -37,7 +36,10 @@
     <code class="name">View​Store</code>
 </h1>
 
-<html><body><pre class="highlight"><code><span class="attribute">@</span><span class="attribute">dynamicMemberLookup</span> <span class="keyword">public</span> <span class="attribute">final</span> <span class="keyword">class</span> <span class="type">ViewStore</span>&lt;<span class="variable">State</span>, <span class="variable">Action</span>&gt;: <span class="type">ObservableObject</span></code></pre></body></html>
+<div class="declaration">
+<pre class="highlight"><code><html><body><span class="attribute">@</span><span class="attribute">dynamicMemberLookup</span>
+<span class="keyword">public</span> <span class="attribute">final</span> <span class="keyword">class</span> <span class="type">ViewStore</span>&lt;<span class="variable">State</span>, <span class="variable">Action</span>&gt;: <span class="type">ObservableObject</span>  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>A <code>ViewStore</code> is an object that can observe state changes and send actions. They are most
 commonly used in views, such as SwiftUI views, UIView or UIViewController, but they can be
@@ -50,10 +52,10 @@ It can be initialized with a store and a closure that is handed a view store and
 view to be rendered:</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">body</span>: <span class="keyword">some</span> <span class="type">View</span> {
-  <span class="variable">WithViewStore</span>(<span class="keyword">self</span>.<span class="type">store</span>) { <span class="variable">viewStore</span> <span class="keyword">in</span>
+  <span class="variable">WithViewStore</span>(<span class="keyword">self</span>.<span class="variable">store</span>) { <span class="variable">viewStore</span> <span class="keyword">in</span>
     <span class="variable">VStack</span> {
-      <span class="variable">Text</span>(<span class="string literal">"</span><span class="string literal">Current count: </span>\<span class="string literal">(</span><span class="variable">viewStore</span>.<span class="type">count</span><span class="string literal">)</span><span class="string literal"/><span class="string literal">"</span>)
-      <span class="variable">Button</span>(<span class="string literal">"</span><span class="string literal">Increment</span><span class="string literal">"</span>) { <span class="variable">viewStore</span>.<span class="type">send</span>(.<span class="variable">incrementButtonTapped</span>) }
+      <span class="variable">Text</span>(<span class="string literal">"</span><span class="string literal">Current count: </span>\<span class="string literal">(</span><span class="variable">viewStore</span>.<span class="variable">count</span><span class="string literal">)</span><span class="string literal"/><span class="string literal">"</span>)
+      <span class="variable">Button</span>(<span class="string literal">"</span><span class="string literal">Increment</span><span class="string literal">"</span>) { <span class="variable">viewStore</span>.<span class="variable">send</span>(.<span class="variable">incrementButtonTapped</span>) }
     }
   }
 }
@@ -65,20 +67,20 @@ state updates:</p>
 <span class="keyword">let</span> <span class="variable">viewStore</span>: <span class="type">ViewStore</span>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;
 
 <span class="keyword">init</span>(<span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;) {
-  <span class="keyword">self</span>.<span class="type">store</span> = <span class="variable">store</span>
-  <span class="keyword">self</span>.<span class="type">viewStore</span> = <span class="variable">ViewStore</span>(<span class="variable">store</span>)
+  <span class="keyword">self</span>.<span class="variable">store</span> = <span class="variable">store</span>
+  <span class="keyword">self</span>.<span class="variable">viewStore</span> = <span class="variable">ViewStore</span>(<span class="variable">store</span>)
 }
 
 <span class="keyword">func</span> <span class="function">viewDidLoad</span>() {
-  <span class="keyword">super</span>.<span class="type">viewDidLoad</span>()
+  <span class="keyword">super</span>.<span class="variable">viewDidLoad</span>()
 
-  <span class="keyword">self</span>.<span class="type">viewStore</span>.<span class="type">publisher</span>.<span class="type">count</span>
-    .<span class="type">sink</span> { [<span class="variable">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span> <span class="keyword">self</span>?.<span class="type">countLabel</span>.<span class="type">text</span> = <span class="variable">$0</span> }
-    .<span class="type">store</span>(<span class="variable">in</span>: &amp;<span class="keyword">self</span>.<span class="type">cancellables</span>)
+  <span class="keyword">self</span>.<span class="variable">viewStore</span>.<span class="variable">publisher</span>.<span class="variable">count</span>
+    .<span class="variable">sink</span> { [<span class="variable">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span> <span class="keyword">self</span>?.<span class="variable">countLabel</span>.<span class="variable">text</span> = <span class="variable">$0</span> }
+    .<span class="variable">store</span>(<span class="variable">in</span>: &amp;<span class="keyword">self</span>.<span class="variable">cancellables</span>)
 }
 
 <span class="attribute">@</span><span class="attribute">objc</span> <span class="keyword">func</span> <span class="function">incrementButtonTapped</span>() {
-  <span class="keyword">self</span>.<span class="type">viewStore</span>.<span class="type">send</span>(.<span class="variable">incrementButtonTapped</span>)
+  <span class="keyword">self</span>.<span class="variable">viewStore</span>.<span class="variable">send</span>(.<span class="variable">incrementButtonTapped</span>)
 }
 </code></pre></body></html>
 </div>
@@ -90,11 +92,11 @@ state updates:</p>
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: %3 Pages: 1 -->
+<!-- Title: %71 Pages: 1 -->
 <svg width="872pt" height="116pt"
  viewBox="0.00 0.00 872.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
-<title>%3</title>
+<title>%71</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-112 868,-112 868,4 -4,4"/>
 <!-- ViewStore -->
 <g id="node1" class="node class current">
@@ -133,9 +135,14 @@ state updates:</p>
 
         <div role="article" class="initializer" id="viewstore.init(_:removeduplicates:)">
     <h3>
-        <code>init(_:​remove​Duplicates:​)</code>
+        <code><a href="#viewstore.init(_:removeduplicates:)">init(_:​remove​Duplicates:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>(<span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;, <span class="variable">removeDuplicates</span> <span class="variable">isDuplicate</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>, <span class="type">State</span>) -&gt; <span class="type">Bool</span>)</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">removeDuplicates</span> <span class="variable">isDuplicate</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>, <span class="type">State</span>) -&gt; <span class="type">Bool</span>
+  )  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Initializes a view store from a store.</p>
 
@@ -172,9 +179,11 @@ state updates:</p>
 
         <div role="article" class="variable" id="viewstore.publisher">
     <h3>
-        <code>publisher</code>
+        <code><a href="#viewstore.publisher">publisher</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">publisher</span>: <a href="/swift-composable-architecture/StorePublisher"><span class="type">StorePublisher</span></a>&lt;<span class="type">State</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">let</span> <span class="variable">publisher</span>: <a href="/swift-composable-architecture/StorePublisher"><span class="type">StorePublisher</span></a>&lt;<span class="type">State</span>&gt;</body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>A publisher of state.</p>
 
@@ -182,15 +191,19 @@ state updates:</p>
 </div>
 <div role="article" class="variable" id="viewstore.objectwillchange">
     <h3>
-        <code>object​Will​Change</code>
+        <code><a href="#viewstore.objectwillchange">object​Will​Change</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">objectWillChange</span></code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">private</span>(<span class="variable">set</span>) <span class="attribute">lazy</span> <span class="keyword">var</span> <span class="variable">objectWillChange</span>  </body></html></code></pre>
+</div>
 </div>
 <div role="article" class="variable" id="viewstore.state">
     <h3>
-        <code>state</code>
+        <code><a href="#viewstore.state">state</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">state</span>: <span class="type">State</span></code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">private</span>(<span class="variable">set</span>) <span class="keyword">var</span> <span class="variable">state</span>: <span class="type">State</span>  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>The current state.</p>
 
@@ -202,9 +215,11 @@ state updates:</p>
 
         <div role="article" class="function" id="viewstore.send(_:animation:)">
     <h3>
-        <code>send(_:​animation:​)</code>
+        <code><a href="#viewstore.send(_:animation:)">send(_:​animation:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">send</span>(<span class="keyword">_</span> <span class="variable">action</span>: <span class="type">Action</span>, <span class="variable">animation</span>: <span class="type">Animation</span>?)</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">send</span>(<span class="keyword">_</span> <span class="variable">action</span>: <span class="type">Action</span>, <span class="variable">animation</span>: <span class="type">Animation</span>?)  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Sends an action to the store with a given animation.</p>
 
@@ -237,9 +252,15 @@ state updates:</p>
 </div>
 <div role="article" class="function" id="viewstore.binding(keypath:send:)">
     <h3>
-        <code>binding(key​Path:​send:​)</code>
+        <code><a href="#viewstore.binding(keypath:send:)">binding(key​Path:​send:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>&lt;<span class="variable">LocalState</span>&gt;(<span class="variable">keyPath</span>: <span class="type">WritableKeyPath</span>&lt;<span class="type">State</span>, <span class="type">LocalState</span>&gt;, <span class="variable">send</span> <span class="variable">action</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<a href="/swift-composable-architecture/BindingAction"><span class="type">BindingAction</span></a>&lt;<span class="type">State</span>&gt;) -&gt; <span class="type">Action</span>) -&gt; <span class="type">Binding</span>&lt;<span class="type">LocalState</span>&gt; <span class="keyword">where</span> <span class="type">LocalState</span>: <span class="type">Equatable</span></code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>&lt;<span class="variable">LocalState</span>&gt;(
+    <span class="variable">keyPath</span>: <span class="type">WritableKeyPath</span>&lt;<span class="type">State</span>, <span class="type">LocalState</span>&gt;,
+    <span class="variable">send</span> <span class="variable">action</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<a href="/swift-composable-architecture/BindingAction"><span class="type">BindingAction</span></a>&lt;<span class="type">State</span>&gt;) -&gt; <span class="type">Action</span>
+  ) -&gt; <span class="type">Binding</span>&lt;<span class="type">LocalState</span>&gt;
+  <span class="keyword">where</span> <span class="type">LocalState</span>: <span class="type">Equatable</span>  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Derives a binding from the store that mutates state at the given writable key path by wrapping
 a <code>BindingAction</code> with the store's action type.</p>
@@ -253,7 +274,7 @@ a <code>BindingAction</code> with the store's action type.</p>
 
 <span class="variable">TextField</span>(
   <span class="string literal">"</span><span class="string literal">Enter text</span><span class="string literal">"</span>,
-  <span class="variable">text</span>: <span class="type">viewStore</span>.<span class="type">binding</span>(<span class="variable">keyPath</span>: \.<span class="type">text</span>, <span class="variable">Action</span>.<span class="type">binding</span>)
+  <span class="variable">text</span>: <span class="type">viewStore</span>.<span class="variable">binding</span>(<span class="variable">keyPath</span>: \.<span class="variable">text</span>, <span class="variable">Action</span>.<span class="variable">binding</span>)
 )
 </code></pre></body></html>
 </div>
@@ -288,9 +309,11 @@ a <code>BindingAction</code> with the store's action type.</p>
 </div>
 <div role="article" class="function" id="viewstore.send(_:)">
     <h3>
-        <code>send(_:​)</code>
+        <code><a href="#viewstore.send(_:)">send(_:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">send</span>(<span class="keyword">_</span> <span class="variable">action</span>: <span class="type">Action</span>)</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">send</span>(<span class="keyword">_</span> <span class="variable">action</span>: <span class="type">Action</span>)  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Sends an action to the store.</p>
 
@@ -325,9 +348,14 @@ be fed back into the store.</p>
 </div>
 <div role="article" class="function" id="viewstore.binding(get:send:)">
     <h3>
-        <code>binding(get:​send:​)</code>
+        <code><a href="#viewstore.binding(get:send:)">binding(get:​send:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>&lt;<span class="variable">LocalState</span>&gt;(<span class="variable">get</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>, <span class="variable">send</span> <span class="variable">localStateToViewAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalState</span>) -&gt; <span class="type">Action</span>) -&gt; <span class="type">Binding</span>&lt;<span class="type">LocalState</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>&lt;<span class="variable">LocalState</span>&gt;(
+    <span class="variable">get</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>,
+    <span class="variable">send</span> <span class="variable">localStateToViewAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalState</span>) -&gt; <span class="type">Action</span>
+  ) -&gt; <span class="type">Binding</span>&lt;<span class="type">LocalState</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Derives a binding from the store that prevents direct writes to state and instead sends
 actions to the store.</p>
@@ -345,9 +373,9 @@ sending actions.</p>
 
 <span class="variable">TextField</span>(
   <span class="string literal">"</span><span class="string literal">Enter name</span><span class="string literal">"</span>,
-  <span class="variable">text</span>: <span class="type">viewStore</span>.<span class="type">binding</span>(
-    <span class="variable">get</span>: { <span class="variable">$0</span>.<span class="type">name</span> },
-    <span class="variable">send</span>: { <span class="variable">Action</span>.<span class="type">nameChanged</span>(<span class="variable">$0</span>) }
+  <span class="variable">text</span>: <span class="type">viewStore</span>.<span class="variable">binding</span>(
+    <span class="variable">get</span>: { <span class="variable">$0</span>.<span class="variable">name</span> },
+    <span class="variable">send</span>: { <span class="variable">Action</span>.<span class="variable">nameChanged</span>(<span class="variable">$0</span>) }
   )
 )
 </code></pre></body></html>
@@ -383,9 +411,14 @@ sending actions.</p>
 </div>
 <div role="article" class="function" id="viewstore.binding(get:send:)">
     <h3>
-        <code>binding(get:​send:​)</code>
+        <code><a href="#viewstore.binding(get:send:)">binding(get:​send:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>&lt;<span class="variable">LocalState</span>&gt;(<span class="variable">get</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>, <span class="variable">send</span> <span class="variable">action</span>: <span class="type">Action</span>) -&gt; <span class="type">Binding</span>&lt;<span class="type">LocalState</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>&lt;<span class="variable">LocalState</span>&gt;(
+    <span class="variable">get</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>,
+    <span class="variable">send</span> <span class="variable">action</span>: <span class="type">Action</span>
+  ) -&gt; <span class="type">Binding</span>&lt;<span class="type">LocalState</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Derives a binding from the store that prevents direct writes to state and instead sends
 actions to the store.</p>
@@ -402,11 +435,11 @@ sending actions.</p>
 <span class="keyword">enum</span> <span class="type">Action</span> { <span class="keyword">case</span> <span class="variable">alertDismissed</span> }
 
 .<span class="variable">alert</span>(
-  <span class="variable">item</span>: <span class="keyword">self</span>.<span class="type">store</span>.<span class="type">binding</span>(
-    <span class="variable">get</span>: { <span class="variable">$0</span>.<span class="type">alert</span> },
+  <span class="variable">item</span>: <span class="keyword">self</span>.<span class="variable">store</span>.<span class="variable">binding</span>(
+    <span class="variable">get</span>: { <span class="variable">$0</span>.<span class="variable">alert</span> },
     <span class="variable">send</span>: .<span class="variable">alertDismissed</span>
   )
-) { <span class="variable">alert</span> <span class="keyword">in</span> <span class="variable">Alert</span>(<span class="variable">title</span>: <span class="type">Text</span>(<span class="variable">alert</span>.<span class="type">message</span>)) }
+) { <span class="variable">alert</span> <span class="keyword">in</span> <span class="variable">Alert</span>(<span class="variable">title</span>: <span class="type">Text</span>(<span class="variable">alert</span>.<span class="variable">message</span>)) }
 </code></pre></body></html>
 </div>
 <h4>Parameters</h4>
@@ -440,9 +473,13 @@ sending actions.</p>
 </div>
 <div role="article" class="function" id="viewstore.binding(send:)">
     <h3>
-        <code>binding(send:​)</code>
+        <code><a href="#viewstore.binding(send:)">binding(send:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>(<span class="variable">send</span> <span class="variable">localStateToViewAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">Action</span>) -&gt; <span class="type">Binding</span>&lt;<span class="type">State</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>(
+    <span class="variable">send</span> <span class="variable">localStateToViewAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">Action</span>
+  ) -&gt; <span class="type">Binding</span>&lt;<span class="type">State</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Derives a binding from the store that prevents direct writes to state and instead sends
 actions to the store.</p>
@@ -460,8 +497,8 @@ sending actions.</p>
 
 <span class="variable">TextField</span>(
   <span class="string literal">"</span><span class="string literal">Enter name</span><span class="string literal">"</span>,
-  <span class="variable">text</span>: <span class="type">viewStore</span>.<span class="type">binding</span>(
-    <span class="variable">send</span>: { <span class="variable">Action</span>.<span class="type">nameChanged</span>(<span class="variable">$0</span>) }
+  <span class="variable">text</span>: <span class="type">viewStore</span>.<span class="variable">binding</span>(
+    <span class="variable">send</span>: { <span class="variable">Action</span>.<span class="variable">nameChanged</span>(<span class="variable">$0</span>) }
   )
 )
 </code></pre></body></html>
@@ -491,9 +528,11 @@ sending actions.</p>
 </div>
 <div role="article" class="function" id="viewstore.binding(send:)">
     <h3>
-        <code>binding(send:​)</code>
+        <code><a href="#viewstore.binding(send:)">binding(send:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>(<span class="variable">send</span> <span class="variable">action</span>: <span class="type">Action</span>) -&gt; <span class="type">Binding</span>&lt;<span class="type">State</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>(<span class="variable">send</span> <span class="variable">action</span>: <span class="type">Action</span>) -&gt; <span class="type">Binding</span>&lt;<span class="type">State</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Derives a binding from the store that prevents direct writes to state and instead sends
 actions to the store.</p>
@@ -510,7 +549,7 @@ sending actions.</p>
 <span class="keyword">enum</span> <span class="type">Action</span> { <span class="keyword">case</span> <span class="variable">alertDismissed</span> }
 
 .<span class="variable">alert</span>(
-  <span class="variable">item</span>: <span class="type">viewStore</span>.<span class="type">binding</span>(
+  <span class="variable">item</span>: <span class="type">viewStore</span>.<span class="variable">binding</span>(
     <span class="variable">send</span>: .<span class="variable">alertDismissed</span>
   )
 ) { <span class="variable">title</span> <span class="keyword">in</span> <span class="variable">Alert</span>(<span class="variable">title</span>: <span class="type">Text</span>(<span class="variable">title</span>)) }
@@ -548,7 +587,7 @@ sending actions.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-04-20T17:09:10+0000">April 20, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+    Generated on <time datetime="2021-06-14T14:57:50+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

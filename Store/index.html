@@ -14,7 +14,6 @@
             </strong>
             <span>Documentation</span>
         </a>
-        <sup>Beta</sup>
     </header>
 
     <!--
@@ -37,7 +36,9 @@
     <code class="name">Store</code>
 </h1>
 
-<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="attribute">final</span> <span class="keyword">class</span> <span class="type">Store</span>&lt;<span class="variable">State</span>, <span class="variable">Action</span>&gt;</code></pre></body></html>
+<div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="attribute">final</span> <span class="keyword">class</span> <span class="type">Store</span>&lt;<span class="variable">State</span>, <span class="variable">Action</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>A store represents the runtime that powers the application. It is the object that you will pass
 around to views that need to interact with the application.</p>
@@ -54,9 +55,15 @@ the <code>scope</code> method to derive more focused stores that can be passed t
 
         <div role="article" class="initializer" id="store.init(initialstate:reducer:environment:)">
     <h3>
-        <code>init(initial​State:​reducer:​environment:​)</code>
+        <code><a href="#store.init(initialstate:reducer:environment:)">init(initial​State:​reducer:​environment:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="attribute">convenience</span> <span class="keyword">init</span>&lt;<span class="variable">Environment</span>&gt;(<span class="variable">initialState</span>: <span class="type">State</span>, <span class="variable">reducer</span>: <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">Environment</span>&gt;, <span class="variable">environment</span>: <span class="type">Environment</span>)</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">Environment</span>&gt;(
+    <span class="variable">initialState</span>: <span class="type">State</span>,
+    <span class="variable">reducer</span>: <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">Environment</span>&gt;,
+    <span class="variable">environment</span>: <span class="type">Environment</span>
+  )  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Initializes a store from an initial state, a reducer, and an environment.</p>
 
@@ -99,9 +106,11 @@ the <code>scope</code> method to derive more focused stores that can be passed t
 
         <div role="article" class="variable" id="store.stateless">
     <h3>
-        <code>stateless</code>
+        <code><a href="#store.stateless">stateless</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">stateless</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">Void</span>, <span class="type">Action</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">stateless</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">Void</span>, <span class="type">Action</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Returns a &quot;stateless&quot; store by erasing state to <code>Void</code>.</p>
 
@@ -109,9 +118,11 @@ the <code>scope</code> method to derive more focused stores that can be passed t
 </div>
 <div role="article" class="variable" id="store.actionless">
     <h3>
-        <code>actionless</code>
+        <code><a href="#store.actionless">actionless</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">actionless</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">actionless</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Returns an &quot;actionless&quot; store by erasing action to <code>Never</code>.</p>
 
@@ -123,21 +134,41 @@ the <code>scope</code> method to derive more focused stores that can be passed t
 
         <div role="article" class="function" id="store.scope(state:)">
     <h3>
-        <code>scope(state:​)</code>
+        <code><a href="#store.scope(state:)">scope(state:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="attribute">@</span><span class="attribute">available</span>(*, <span class="variable">deprecated</span>, <span class="variable">renamed</span>: <span class="string literal">"publisherScope(state:)"</span>) <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>&gt;(<span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">Action</span>&gt;, <span class="type">Never</span>&gt; <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span></code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="attribute">@</span><span class="attribute">_disfavoredOverload</span>
+  <span class="attribute">@</span><span class="attribute">available</span>(*, <span class="variable">deprecated</span>, <span class="variable">renamed</span>: <span class="string literal">"publisherScope(state:)"</span>)
+  <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>&gt;(
+    <span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>
+  ) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">Action</span>&gt;, <span class="type">Never</span>&gt;
+  <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span>  </body></html></code></pre>
+</div>
 </div>
 <div role="article" class="function" id="store.scope(state:action:)">
     <h3>
-        <code>scope(state:​action:​)</code>
+        <code><a href="#store.scope(state:action:)">scope(state:​action:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="attribute">@</span><span class="attribute">available</span>(*, <span class="variable">deprecated</span>, <span class="variable">renamed</span>: <span class="string literal">"publisherScope(state:action:)"</span>) <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>, <span class="variable">LocalAction</span>&gt;(<span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>, <span class="variable">action</span> <span class="variable">fromLocalAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalAction</span>) -&gt; <span class="type">Action</span>) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">LocalAction</span>&gt;, <span class="type">Never</span>&gt; <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span></code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="attribute">@</span><span class="attribute">_disfavoredOverload</span>
+  <span class="attribute">@</span><span class="attribute">available</span>(*, <span class="variable">deprecated</span>, <span class="variable">renamed</span>: <span class="string literal">"publisherScope(state:action:)"</span>)
+  <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>, <span class="variable">LocalAction</span>&gt;(
+    <span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>,
+    <span class="variable">action</span> <span class="variable">fromLocalAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalAction</span>) -&gt; <span class="type">Action</span>
+  ) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">LocalAction</span>&gt;, <span class="type">Never</span>&gt;
+  <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span>  </body></html></code></pre>
+</div>
 </div>
 <div role="article" class="function" id="store.scope(state:action:)">
     <h3>
-        <code>scope(state:​action:​)</code>
+        <code><a href="#store.scope(state:action:)">scope(state:​action:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">LocalState</span>, <span class="variable">LocalAction</span>&gt;(<span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>, <span class="variable">action</span> <span class="variable">fromLocalAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalAction</span>) -&gt; <span class="type">Action</span>) -&gt; <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">LocalAction</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">LocalState</span>, <span class="variable">LocalAction</span>&gt;(
+    <span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>,
+    <span class="variable">action</span> <span class="variable">fromLocalAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalAction</span>) -&gt; <span class="type">Action</span>
+  ) -&gt; <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">LocalAction</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Scopes the store to one that exposes local state and actions.</p>
 
@@ -159,9 +190,9 @@ example:</p>
 
 <span class="comment">// Construct a login view by scoping the store to one that works with only login domain.</span>
 <span class="variable">LoginView</span>(
-  <span class="variable">store</span>: <span class="type">store</span>.<span class="type">scope</span>(
-    <span class="variable">state</span>: { <span class="variable">$0</span>.<span class="type">login</span> },
-    <span class="variable">action</span>: { <span class="variable">AppAction</span>.<span class="type">login</span>(<span class="variable">$0</span>) }
+  <span class="variable">store</span>: <span class="type">store</span>.<span class="variable">scope</span>(
+    <span class="variable">state</span>: { <span class="variable">$0</span>.<span class="variable">login</span> },
+    <span class="variable">action</span>: { <span class="variable">AppAction</span>.<span class="variable">login</span>(<span class="variable">$0</span>) }
   )
 )
 </code></pre></body></html>
@@ -241,7 +272,7 @@ transform view actions into feature actions.</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">extension</span> <span class="type">LoginState</span> {
   <span class="keyword">var</span> <span class="variable">view</span>: <span class="type">LoginView</span>.<span class="type">State</span> {
-    .<span class="variable">init</span>(<span class="variable">email</span>: <span class="keyword">self</span>.<span class="type">email</span>, <span class="variable">password</span>: <span class="keyword">self</span>.<span class="type">password</span>)
+    .<span class="variable">init</span>(<span class="variable">email</span>: <span class="keyword">self</span>.<span class="variable">email</span>, <span class="variable">password</span>: <span class="keyword">self</span>.<span class="variable">password</span>)
   }
 }
 
@@ -263,7 +294,7 @@ domain:</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">body</span>: <span class="keyword">some</span> <span class="type">View</span> {
   <span class="variable">WithViewStore</span>(
-    <span class="keyword">self</span>.<span class="type">store</span>.<span class="type">scope</span>(<span class="variable">state</span>: { <span class="variable">$0</span>.<span class="type">view</span> }, <span class="variable">action</span>: { <span class="variable">$0</span>.<span class="type">feature</span> })
+    <span class="keyword">self</span>.<span class="variable">store</span>.<span class="variable">scope</span>(<span class="variable">state</span>: { <span class="variable">$0</span>.<span class="variable">view</span> }, <span class="variable">action</span>: { <span class="variable">$0</span>.<span class="variable">feature</span> })
   ) { <span class="variable">viewStore</span> <span class="keyword">in</span>
     ...
   }
@@ -304,9 +335,13 @@ when non-view state changes), and is incapable of sending any actions but view a
 </div>
 <div role="article" class="function" id="store.scope(state:)">
     <h3>
-        <code>scope(state:​)</code>
+        <code><a href="#store.scope(state:)">scope(state:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">LocalState</span>&gt;(<span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>) -&gt; <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">Action</span>&gt;</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">scope</span>&lt;<span class="variable">LocalState</span>&gt;(
+    <span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">LocalState</span>
+  ) -&gt; <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">Action</span>&gt;  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Scopes the store to one that exposes local state.</p>
 
@@ -336,9 +371,15 @@ when non-view state changes), and is incapable of sending any actions but view a
 </div>
 <div role="article" class="function" id="store.publisherscope(state:action:)">
     <h3>
-        <code>publisher​Scope(state:​action:​)</code>
+        <code><a href="#store.publisherscope(state:action:)">publisher​Scope(state:​action:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">publisherScope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>, <span class="variable">LocalAction</span>&gt;(<span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>, <span class="variable">action</span> <span class="variable">fromLocalAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalAction</span>) -&gt; <span class="type">Action</span>) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">LocalAction</span>&gt;, <span class="type">Never</span>&gt; <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span></code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">publisherScope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>, <span class="variable">LocalAction</span>&gt;(
+    <span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>,
+    <span class="variable">action</span> <span class="variable">fromLocalAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">LocalAction</span>) -&gt; <span class="type">Action</span>
+  ) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">LocalAction</span>&gt;, <span class="type">Never</span>&gt;
+  <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span>  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Scopes the store to a publisher of stores of more local state and local actions.</p>
 
@@ -374,9 +415,14 @@ when non-view state changes), and is incapable of sending any actions but view a
 </div>
 <div role="article" class="function" id="store.publisherscope(state:)">
     <h3>
-        <code>publisher​Scope(state:​)</code>
+        <code><a href="#store.publisherscope(state:)">publisher​Scope(state:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">publisherScope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>&gt;(<span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">Action</span>&gt;, <span class="type">Never</span>&gt; <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span></code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">publisherScope</span>&lt;<span class="variable">P</span>: <span class="type">Publisher</span>, <span class="variable">LocalState</span>&gt;(
+    <span class="variable">state</span> <span class="variable">toLocalState</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">AnyPublisher</span>&lt;<span class="type">State</span>, <span class="type">Never</span>&gt;) -&gt; <span class="type">P</span>
+  ) -&gt; <span class="type">AnyPublisher</span>&lt;<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">LocalState</span>, <span class="type">Action</span>&gt;, <span class="type">Never</span>&gt;
+  <span class="keyword">where</span> <span class="type">P</span>.<span class="type">Output</span> == <span class="type">LocalState</span>, <span class="type">P</span>.<span class="type">Failure</span> == <span class="type">Never</span>  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Scopes the store to a publisher of stores of more local state and local actions.</p>
 
@@ -406,9 +452,14 @@ when non-view state changes), and is incapable of sending any actions but view a
 </div>
 <div role="article" class="function" id="store.iflet(then:else:)">
     <h3>
-        <code>if​Let(then:​else:​)</code>
+        <code><a href="#store.iflet(then:else:)">if​Let(then:​else:​)</a></code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">ifLet</span>&lt;<span class="variable">Wrapped</span>&gt;(<span class="variable">then</span> <span class="variable">unwrap</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">Wrapped</span>, <span class="type">Action</span>&gt;) -&gt; <span class="type">Void</span>, <span class="variable">else</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">Void</span> = {}) -&gt; <span class="type">Cancellable</span> <span class="keyword">where</span> <span class="type">State</span> == <span class="type">Wrapped</span>?</code></pre></body></html>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">ifLet</span>&lt;<span class="variable">Wrapped</span>&gt;(
+    <span class="variable">then</span> <span class="variable">unwrap</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">Wrapped</span>, <span class="type">Action</span>&gt;) -&gt; <span class="type">Void</span>,
+    <span class="variable">else</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">Void</span> = {}
+  ) -&gt; <span class="type">Cancellable</span> <span class="keyword">where</span> <span class="type">State</span> == <span class="type">Wrapped</span>?  </body></html></code></pre>
+</div>
 <div class="summary" role="doc-abstract">
     <p>Calls one of two closures depending on whether a store's optional state is <code>nil</code> or not, and
 whenever this condition changes for as long as the cancellable lives.</p>
@@ -429,21 +480,21 @@ to navigate to can be held as an optional value in the parent, and when that val
   ...
   <span class="keyword">func</span> <span class="function">viewDidLoad</span>() {
     ...
-    <span class="keyword">self</span>.<span class="type">store</span>
-      .<span class="type">scope</span>(<span class="variable">state</span>: \.<span class="type">optionalChild</span>, <span class="variable">action</span>: <span class="type">ParentAction</span>.<span class="type">child</span>)
-      .<span class="type">ifLet</span>(
+    <span class="keyword">self</span>.<span class="variable">store</span>
+      .<span class="variable">scope</span>(<span class="variable">state</span>: \.<span class="variable">optionalChild</span>, <span class="variable">action</span>: <span class="type">ParentAction</span>.<span class="variable">child</span>)
+      .<span class="variable">ifLet</span>(
         <span class="variable">then</span>: { [<span class="variable">weak</span> <span class="keyword">self</span>] <span class="variable">childStore</span> <span class="keyword">in</span>
-          <span class="keyword">self</span>?.<span class="type">navigationController</span>?.<span class="type">pushViewController</span>(
+          <span class="keyword">self</span>?.<span class="variable">navigationController</span>?.<span class="variable">pushViewController</span>(
             <span class="variable">ChildViewController</span>(<span class="variable">store</span>: <span class="type">childStore</span>),
             <span class="variable">animated</span>: <span class="keyword">true</span>
           )
         },
         <span class="variable">else</span>: { [<span class="variable">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span>
           <span class="keyword">guard</span> <span class="keyword">let</span> <span class="keyword">self</span> = <span class="keyword">self</span> <span class="keyword">else</span> { <span class="keyword">return</span> }
-          <span class="keyword">self</span>.<span class="type">navigationController</span>?.<span class="type">popToViewController</span>(<span class="keyword">self</span>, <span class="variable">animated</span>: <span class="keyword">true</span>)
+          <span class="keyword">self</span>.<span class="variable">navigationController</span>?.<span class="variable">popToViewController</span>(<span class="keyword">self</span>, <span class="variable">animated</span>: <span class="keyword">true</span>)
         }
       )
-      .<span class="type">store</span>(<span class="variable">in</span>: &amp;<span class="keyword">self</span>.<span class="type">cancellables</span>)
+      .<span class="variable">store</span>(<span class="variable">in</span>: &amp;<span class="keyword">self</span>.<span class="variable">cancellables</span>)
   }
 }
 </code></pre></body></html>
@@ -486,7 +537,7 @@ to navigate to can be held as an optional value in the parent, and when that val
 
     <footer>
         <p>
-    Generated on <time datetime="2021-04-20T17:09:10+0000">April 20, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+    Generated on <time datetime="2021-06-14T14:57:50+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
