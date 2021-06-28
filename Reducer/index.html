@@ -56,8 +56,8 @@ an action, and describes what <code>Effect</code>s should be executed later by t
 change.</p>
 </li>
 <li>
-<p><code>Environment</code>: A type that holds all dependencies needed in order to produce <code>Effect</code>s, such
-as API clients, analytics clients, random number generators, etc.</p>
+<p><code>Environment</code>: A type that holds all dependencies needed in order to produce <code>Effect</code>s,
+such as API clients, analytics clients, random number generators, etc.</p>
 </li>
 </ul>
 
@@ -85,7 +85,7 @@ as API clients, analytics clients, random number generators, etc.</p>
     <p>The reducer takes three arguments: state, action and environment. The state is <code>inout</code> so that
 you can make any changes to it directly inline. The reducer must return an effect, which
 typically would be constructed by using the dependencies inside the <code>environment</code> value. If
-no effect needs to be executed, a <code>.none</code> effect can be returned.</p>
+no effect needs to be executed, a <code>Effect/none</code> effect can be returned.</p>
 
 <p>For example:</p>
 
@@ -454,20 +454,25 @@ example, if <code>reducerA</code> embeds the domain of <code>reducerB</code> and
 its state, it can make a difference if <code>reducerA</code> chooses to modify <code>reducerB</code>'s state
 <em>before</em> or <em>after</em> <code>reducerB</code> runs.</p>
 
-<p>This is perhaps most easily seen when working with <code>optional</code> reducers, where the parent
-domain may listen to the child domain and <code>nil</code> out its state. If the parent reducer runs
-before the child reducer, then the child reducer will not be able to react to its own action.</p>
+<p>This is perhaps most easily seen when working with <code>Reducer/optional</code> reducers, where the
+parent domain may listen to the child domain and <code>nil</code> out its state. If the parent reducer
+runs before the child reducer, then the child reducer will not be able to react to its own
+action.</p>
 
-<p>Similar can be said for a <code>forEach</code> reducer. If the parent domain modifies the child
-collection by moving, removing, or modifying an element before the <code>forEach</code> reducer runs, the
-<code>forEach</code> reducer may perform its action against the wrong element, an element that no longer
-exists, or an element in an unexpected state.</p>
+<p>Similar can be said for a
+<code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer. If the
+parent domain modifies the child collection by moving, removing, or modifying an element
+before the <code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer
+runs, the <code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer may
+perform its action against the wrong element, an element that no longer exists, or an element
+in an unexpected state.</p>
 
 <p>Running a parent reducer before a child reducer can be considered an application logic
 error, and can produce assertion failures. So you should almost always combine reducers in
 order from child to parent domain.</p>
 
-<p>Here is an example of how you should combine an <code>optional</code> reducer with a parent domain:</p>
+<p>Here is an example of how you should combine an <code>Reducer/optional</code> reducer with a parent
+domain:</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">parentReducer</span> = <span class="variable">Reducer</span>&lt;<span class="type">ParentState</span>, <span class="type">ParentAction</span>, <span class="type">ParentEnvironment</span>&gt;.<span class="variable">combine</span>(
   <span class="comment">// Combined before parent so that it can react to `.dismiss` while state is non-`nil`.</span>
@@ -532,20 +537,25 @@ example, if <code>reducerA</code> embeds the domain of <code>reducerB</code> and
 its state, it can make a difference if <code>reducerA</code> chooses to modify <code>reducerB</code>'s state
 <em>before</em> or <em>after</em> <code>reducerB</code> runs.</p>
 
-<p>This is perhaps most easily seen when working with <code>optional</code> reducers, where the parent
-domain may listen to the child domain and <code>nil</code> out its state. If the parent reducer runs
-before the child reducer, then the child reducer will not be able to react to its own action.</p>
+<p>This is perhaps most easily seen when working with <code>Reducer/optional</code> reducers, where the
+parent domain may listen to the child domain and <code>nil</code> out its state. If the parent reducer
+runs before the child reducer, then the child reducer will not be able to react to its own
+action.</p>
 
-<p>Similar can be said for a <code>forEach</code> reducer. If the parent domain modifies the child
-collection by moving, removing, or modifying an element before the <code>forEach</code> reducer runs, the
-<code>forEach</code> reducer may perform its action against the wrong element, an element that no longer
-exists, or an element in an unexpected state.</p>
+<p>Similar can be said for a
+<code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer. If the
+parent domain modifies the child collection by moving, removing, or modifying an element
+before the <code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer
+runs, the <code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer may
+perform its action against the wrong element, an element that no longer exists, or an element
+in an unexpected state.</p>
 
-<p>Running a parent reducer before a child reducer can be considered an application logic
-error, and can produce assertion failures. So you should almost always combine reducers in
-order from child to parent domain.</p>
+<p>Running a parent reducer before a child reducer can be considered an application logic error,
+and can produce assertion failures. So you should almost always combine reducers in order from
+child to parent domain.</p>
 
-<p>Here is an example of how you should combine an <code>optional</code> reducer with a parent domain:</p>
+<p>Here is an example of how you should combine an <code>Reducer/optional</code> reducer with a parent
+domain:</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">parentReducer</span> = <span class="variable">Reducer</span>&lt;<span class="type">ParentState</span>, <span class="type">ParentAction</span>, <span class="type">ParentEnvironment</span>&gt;.<span class="variable">combine</span>(
   <span class="comment">// Combined before parent so that it can react to `.dismiss` while state is non-`nil`.</span>
@@ -610,20 +620,25 @@ example, if <code>reducerA</code> embeds the domain of <code>reducerB</code> and
 its state, it can make a difference if <code>reducerA</code> chooses to modify <code>reducerB</code>'s state
 <em>before</em> or <em>after</em> <code>reducerB</code> runs.</p>
 
-<p>This is perhaps most easily seen when working with <code>optional</code> reducers, where the parent
-domain may listen to the child domain and <code>nil</code> out its state. If the parent reducer runs
-before the child reducer, then the child reducer will not be able to react to its own action.</p>
+<p>This is perhaps most easily seen when working with <code>Reducer/optional</code> reducers, where the
+parent domain may listen to the child domain and <code>nil</code> out its state. If the parent reducer
+runs before the child reducer, then the child reducer will not be able to react to its own
+action.</p>
 
-<p>Similar can be said for a <code>forEach</code> reducer. If the parent domain modifies the child
-collection by moving, removing, or modifying an element before the <code>forEach</code> reducer runs, the
-<code>forEach</code> reducer may perform its action against the wrong element, an element that no longer
-exists, or an element in an unexpected state.</p>
+<p>Similar can be said for a
+<code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer. If the
+parent domain modifies the child collection by moving, removing, or modifying an element
+before the <code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer
+runs, the <code>Reducer/forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducer may
+perform its action against the wrong element, an element that no longer exists, or an element
+in an unexpected state.</p>
 
-<p>Running a parent reducer before a child reducer can be considered an application logic
-error, and can produce assertion failures. So you should almost always combine reducers in
-order from child to parent domain.</p>
+<p>Running a parent reducer before a child reducer can be considered an application logic error,
+and can produce assertion failures. So you should almost always combine reducers in order from
+child to parent domain.</p>
 
-<p>Here is an example of how you should combine an <code>optional</code> reducer with a parent domain:</p>
+<p>Here is an example of how you should combine an <code>Reducer/optional</code> reducer with a parent
+domain:</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">parentReducer</span>: <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">ParentState</span>, <span class="type">ParentAction</span>, <span class="type">ParentEnvironment</span>&gt; =
   <span class="comment">// Run before parent so that it can react to `.dismiss` while state is non-`nil`.</span>
@@ -701,27 +716,28 @@ the method:</p>
 </ul>
 
 <p>This operation is important for breaking down large reducers into small ones. When used with
-the <code>combine</code> operator you can define many reducers that work on small pieces of domain, and
-then <em>pull them back</em> and <em>combine</em> them into one big reducer that works on a large domain.</p>
+the <code>combine(_:)-1ern2</code> operator you can define many reducers that work on small pieces of
+domain, and then <em>pull them back</em> and <em>combine</em> them into one big reducer that works on a
+large domain.</p>
 
-<html><body><pre class="highlight"><code><span class="comment">// Global domain that holds a local domain:</span>
-<span class="keyword">struct</span> <span class="type">AppState</span> { <span class="keyword">var</span> <span class="variable">settings</span>: <span class="type">SettingsState</span>, <span class="comment">/* rest of state */</span> }
-<span class="keyword">enum</span> <span class="type">AppAction</span> { <span class="keyword">case</span> <span class="variable">settings</span>(<span class="type">SettingsAction</span>), <span class="comment">/* other actions */</span> }
-<span class="keyword">struct</span> <span class="type">AppEnvironment</span> { <span class="keyword">var</span> <span class="variable">settings</span>: <span class="type">SettingsEnvironment</span>, <span class="comment">/* rest of dependencies */</span> }
+<html><body><pre class="highlight"><code> <span class="comment">// Global domain that holds a local domain:</span>
+ <span class="keyword">struct</span> <span class="type">AppState</span> { <span class="keyword">var</span> <span class="variable">settings</span>: <span class="type">SettingsState</span>, <span class="comment">/* rest of state */</span> }
+ <span class="keyword">enum</span> <span class="type">AppAction</span> { <span class="keyword">case</span> <span class="variable">settings</span>(<span class="type">SettingsAction</span>), <span class="comment">/* other actions */</span> }
+ <span class="keyword">struct</span> <span class="type">AppEnvironment</span> { <span class="keyword">var</span> <span class="variable">settings</span>: <span class="type">SettingsEnvironment</span>, <span class="comment">/* rest of dependencies */</span> }
 
-<span class="comment">// A reducer that works on the local domain:</span>
-<span class="keyword">let</span> <span class="variable">settingsReducer</span> = <span class="variable">Reducer</span>&lt;<span class="type">SettingsState</span>, <span class="type">SettingsAction</span>, <span class="type">SettingsEnvironment</span>&gt; { ... }
+ <span class="comment">// A reducer that works on the local domain:</span>
+ <span class="keyword">let</span> <span class="variable">settingsReducer</span> = <span class="variable">Reducer</span>&lt;<span class="type">SettingsState</span>, <span class="type">SettingsAction</span>, <span class="type">SettingsEnvironment</span>&gt; { ... }
 
-<span class="comment">// Pullback the settings reducer so that it works on all of the app domain:</span>
-<span class="keyword">let</span> <span class="variable">appReducer</span>: <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">AppState</span>, <span class="type">AppAction</span>, <span class="type">AppEnvironment</span>&gt; = .<span class="variable">combine</span>(
-  <span class="variable">settingsReducer</span>.<span class="variable">pullback</span>(
-    <span class="variable">state</span>: \.<span class="variable">settings</span>,
-    <span class="variable">action</span>: /<span class="variable">AppAction</span>.<span class="variable">settings</span>,
-    <span class="variable">environment</span>: { <span class="variable">$0</span>.<span class="variable">settings</span> }
-  ),
+ <span class="comment">// Pullback the settings reducer so that it works on all of the app domain:</span>
+ <span class="keyword">let</span> <span class="variable">appReducer</span>: <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">AppState</span>, <span class="type">AppAction</span>, <span class="type">AppEnvironment</span>&gt; = .<span class="variable">combine</span>(
+   <span class="variable">settingsReducer</span>.<span class="variable">pullback</span>(
+     <span class="variable">state</span>: \.<span class="variable">settings</span>,
+     <span class="variable">action</span>: /<span class="variable">AppAction</span>.<span class="variable">settings</span>,
+     <span class="variable">environment</span>: { <span class="variable">$0</span>.<span class="variable">settings</span> }
+   ),
 
-  <span class="comment">/* other reducers */</span>
-)
+   <span class="comment">/* other reducers */</span>
+ )
 </code></pre></body></html>
 </div>
 <h4>Parameters</h4>
@@ -794,15 +810,15 @@ typically an enum.</p>
 </li>
 </ul>
 
-<p>This overload of <code>pullback</code> differs from the other in that it takes a <code>CasePath</code>
-transformation for the state instead of a <code>WritableKeyPath</code>. This makes it perfect for
-working on enum state as opposed to struct state. In particular, you can use this operator
-to pullback a reducer that operates on a single case of some state enum to work on the
-entire state enum.</p>
+<p>This overload of <code>pullback(state:action:environment:)</code> differs from the other in that it
+takes a <code>CasePath</code> transformation for the state instead of a <code>WritableKeyPath</code>. This makes it
+perfect for working on enum state as opposed to struct state. In particular, you can use this
+operator to pullback a reducer that operates on a single case of some state enum to work on
+the entire state enum.</p>
 
-<p>When used with the <code>combine</code> operator you can define many reducers that work each case of the
-state enum, and then <em>pull them back</em> and <em>combine</em> them into one big reducer that works on a
-large domain.</p>
+<p>When used with the <code>combine(_:)-994ake</code> operator you can define many reducers that work each
+case of the state enum, and then <em>pull them back</em> and <em>combine</em> them into one big reducer that
+works on a large domain.</p>
 
 <html><body><pre class="highlight"><code><span class="comment">// Global domain that holds a local domain:</span>
 <span class="keyword">enum</span> <span class="type">AppState</span> { <span class="keyword">case</span> <span class="variable">loggedIn</span>(<span class="type">LoggedInState</span>), <span class="comment">/* rest of state */</span> }
@@ -833,7 +849,7 @@ ways in which these errors can sneak into a code base:</p>
 <li>
 <p>A parent reducer sets child state to a different case when processing a child action and
 runs <em>before</em> the child reducer:</p>
-<pre><code>let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
+<pre><code class="language-swift">let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
   // When combining reducers, the parent reducer runs first
   Reducer { state, action, environment in
     switch action {
@@ -858,7 +874,7 @@ let childReducer = Reducer&lt;
 </code></pre>
 <p>To ensure that a child reducer can process any action that a parent may use to change its
 state, combine it <em>before</em> the parent:</p>
-<pre><code>let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
+<pre><code class="language-swift">let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
   // The child runs first
   childReducer.pullback(state: /ParentState.child, ...),
   // The parent runs after
@@ -870,7 +886,7 @@ state, combine it <em>before</em> the parent:</p>
 </li>
 <li>
 <p>A child effect feeds a child action back into the store when child state is unavailable:</p>
-<pre><code>let childReducer = Reducer&lt;
+<pre><code class="language-swift">let childReducer = Reducer&lt;
   ChildState, ChildAction, ChildEnvironment
 &gt; { state, action environment in
   switch action {
@@ -889,7 +905,7 @@ state, combine it <em>before</em> the parent:</p>
 <p>It is perfectly reasonable to ignore the result of an effect when child state is <code>nil</code>,
 for example one-off effects that you don't want to cancel. However, many long-living
 effects <em>should</em> be explicitly canceled when tearing down a child domain:</p>
-<pre><code>let childReducer = Reducer&lt;
+<pre><code class="language-swift">let childReducer = Reducer&lt;
   ChildState, ChildAction, ChildEnvironment
 &gt; { state, action environment in
   struct MotionId: Hashable {}
@@ -912,15 +928,15 @@ effects <em>should</em> be explicitly canceled when tearing down a child domain:
 </li>
 <li>
 <p>A view store sends a child action when child state is <code>nil</code>:</p>
-<pre><code>WithViewStore(self.parentStore) { parentViewStore in
+<pre><code class="language-swift">WithViewStore(self.parentStore) { parentViewStore in
   // If child state is `nil`, it cannot process this action.
   Button(&quot;Child Action&quot;) { parentViewStore.send(.child(.action)) }
   ...
 }
 </code></pre>
-<p>Use <code>Store.scope</code> with <code>SwitchStore</code> to ensure that views can only send child actions when
-the child domain is available.</p>
-<pre><code>SwitchStore(self.parentStore) {
+<p>Use <code>Store/scope(state:action:)-9iai9</code> with <code>SwitchStore</code> to ensure that views can
+only send child actions when the child domain is available.</p>
+<pre><code class="language-swift">SwitchStore(self.parentStore) {
   CaseLet(state: /ParentState.child, action: ParentAction.child) { childStore in
     // This destination only appears when child state matches
     WithViewStore(childStore) { childViewStore in
@@ -993,9 +1009,9 @@ only running the non-optional reducer when state is non-nil.</p>
 
 </div>
 <div class="discussion">
-    <p>Often used in tandem with <code>pullback</code> to transform a reducer on a non-optional child domain
-into a reducer that can be combined with a reducer on a parent domain that contains some
-optional child domain:</p>
+    <p>Often used in tandem with <code>pullback(state:action:environment:)</code> to transform a reducer on a
+non-optional child domain into a reducer that can be combined with a reducer on a parent
+domain that contains some optional child domain:</p>
 
 <html><body><pre class="highlight"><code><span class="comment">// Global domain that holds an optional local domain:</span>
 <span class="keyword">struct</span> <span class="type">AppState</span> { <span class="keyword">var</span> <span class="variable">modal</span>: <span class="type">ModalState</span>? }
@@ -1026,7 +1042,7 @@ are a few ways in which these errors can sneak into a code base:</p>
 <li>
 <p>A parent reducer sets child state to <code>nil</code> when processing a child action and runs
 <em>before</em> the child reducer:</p>
-<pre><code>let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
+<pre><code class="language-swift">let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
   // When combining reducers, the parent reducer runs first
   Reducer { state, action, environment in
     switch action {
@@ -1051,7 +1067,7 @@ let childReducer = Reducer&lt;
 </code></pre>
 <p>To ensure that a child reducer can process any action that a parent may use to <code>nil</code> out
 its state, combine it <em>before</em> the parent:</p>
-<pre><code>let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
+<pre><code class="language-swift">let parentReducer = Reducer&lt;ParentState, ParentAction, ParentEnvironment&gt;.combine(
   // The child runs first
   childReducer.optional().pullback(...),
   // The parent runs after
@@ -1063,7 +1079,7 @@ its state, combine it <em>before</em> the parent:</p>
 </li>
 <li>
 <p>A child effect feeds a child action back into the store when child state is <code>nil</code>:</p>
-<pre><code>let childReducer = Reducer&lt;
+<pre><code class="language-swift">let childReducer = Reducer&lt;
   ChildState, ChildAction, ChildEnvironment
 &gt; { state, action environment in
   switch action {
@@ -1082,7 +1098,7 @@ its state, combine it <em>before</em> the parent:</p>
 <p>It is perfectly reasonable to ignore the result of an effect when child state is <code>nil</code>,
 for example one-off effects that you don't want to cancel. However, many long-living
 effects <em>should</em> be explicitly canceled when tearing down a child domain:</p>
-<pre><code>let childReducer = Reducer&lt;
+<pre><code class="language-swift">let childReducer = Reducer&lt;
   ChildState, ChildAction, ChildEnvironment
 &gt; { state, action environment in
   struct MotionId: Hashable {}
@@ -1105,15 +1121,16 @@ effects <em>should</em> be explicitly canceled when tearing down a child domain:
 </li>
 <li>
 <p>A view store sends a child action when child state is <code>nil</code>:</p>
-<pre><code>WithViewStore(self.parentStore) { parentViewStore in
+<pre><code class="language-swift">WithViewStore(self.parentStore) { parentViewStore in
   // If child state is `nil`, it cannot process this action.
   Button(&quot;Child Action&quot;) { parentViewStore.send(.child(.action)) }
   ...
 }
 </code></pre>
-<p>Use <code>Store.scope</code> with <code>IfLetStore</code> or <code>Store.ifLet</code> to ensure that views can only send
-child actions when the child domain is non-<code>nil</code>.</p>
-<pre><code>IfLetStore(
+<p>Use <code>Store/scope(state:action:)-9iai9</code> with <code>IfLetStore</code> or
+<code>Store/ifLet(then:else:)</code> to ensure that views can only send child actions when the
+child domain is non-<code>nil</code>.</p>
+<pre><code class="language-swift">IfLetStore(
   self.parentStore.scope(state: { $0.child }, action: { .child($0) }
 ) { childStore in
   // This destination only appears when child state is non-`nil`
@@ -1132,7 +1149,7 @@ child actions when the child domain is non-<code>nil</code>.</p>
 
 </aside>
 <aside class="see also" title="See Also">
-    <p><code>Store.ifLet</code>, a UIKit helper for doing imperative work with a store on optional state.</p>
+    <p><code>Store/ifLet(then:else:)</code>, a UIKit helper for doing imperative work with a store on optional state.</p>
 
 </aside>
 </div>
@@ -1174,8 +1191,8 @@ child actions when the child domain is non-<code>nil</code>.</p>
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">GlobalState</span>, <span class="type">GlobalAction</span>, <span class="type">GlobalEnvironment</span>&gt;  </body></html></code></pre>
 </div>
 <div class="summary" role="doc-abstract">
-    <p>A version of <code>pullback</code> that transforms a reducer that works on an element into one that works
-on a collection of elements.</p>
+    <p>A version of <code>pullback(state:action:environment:)</code> that transforms a reducer that works on
+an element into one that works on a collection of elements.</p>
 
 </div>
 <div class="discussion">
@@ -1199,8 +1216,10 @@ on a collection of elements.</p>
   }
 )
 </code></pre></body></html>
-<p>Take care when combining <code>forEach</code> reducers into parent domains, as order matters. Always
-combine <code>forEach</code> reducers <em>before</em> parent reducers that can modify the collection.</p>
+<p>Take care when combining <code>forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code>
+reducers into parent domains, as order matters. Always combine
+<code>forEach(state:action:environment:breakpointOnNil:_:_:)-3ic87</code> reducers <em>before</em> parent
+reducers that can modify the collection.</p>
 
 </div>
 <h4>Parameters</h4>
@@ -1260,8 +1279,8 @@ combine <code>forEach</code> reducers <em>before</em> parent reducers that can m
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">GlobalState</span>, <span class="type">GlobalAction</span>, <span class="type">GlobalEnvironment</span>&gt;  </body></html></code></pre>
 </div>
 <div class="summary" role="doc-abstract">
-    <p>A version of <code>pullback</code> that transforms a reducer that works on an element into one that works
-on an identified array of elements.</p>
+    <p>A version of <code>pullback(state:action:environment:)</code> that transforms a reducer that works on
+an element into one that works on an identified array of elements.</p>
 
 </div>
 <div class="discussion">
@@ -1285,8 +1304,10 @@ on an identified array of elements.</p>
   }
 )
 </code></pre></body></html>
-<p>Take care when combining <code>forEach</code> reducers into parent domains, as order matters. Always
-combine <code>forEach</code> reducers <em>before</em> parent reducers that can modify the collection.</p>
+<p>Take care when combining <code>forEach(state:action:environment:breakpointOnNil:_:_:)-90ox5</code>
+reducers into parent domains, as order matters. Always combine
+<code>forEach(state:action:environment:breakpointOnNil:_:_:)-90ox5</code> reducers <em>before</em> parent
+reducers that can modify the collection.</p>
 
 </div>
 <h4>Parameters</h4>
@@ -1345,13 +1366,15 @@ combine <code>forEach</code> reducers <em>before</em> parent reducers that can m
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">GlobalState</span>, <span class="type">GlobalAction</span>, <span class="type">GlobalEnvironment</span>&gt;  </body></html></code></pre>
 </div>
 <div class="summary" role="doc-abstract">
-    <p>A version of <code>pullback</code> that transforms a reducer that works on an element into one that works
-on a dictionary of element values.</p>
+    <p>A version of <code>pullback(state:action:environment:)</code> that transforms a reducer that works on
+an element into one that works on a dictionary of element values.</p>
 
 </div>
 <div class="discussion">
-    <p>Take care when combining <code>forEach</code> reducers into parent domains, as order matters. Always
-combine <code>forEach</code> reducers <em>before</em> parent reducers that can modify the dictionary.</p>
+    <p>Take care when combining <code>forEach(state:action:environment:breakpointOnNil:_:_:)-xv1z</code>
+reducers into parent domains, as order matters. Always combine
+<code>forEach(state:action:environment:breakpointOnNil:_:_:)-xv1z</code> reducers <em>before</em> parent
+reducers that can modify the dictionary.</p>
 
 </div>
 <h4>Parameters</h4>
@@ -1479,7 +1502,7 @@ case:</p>
 }
 </code></pre></body></html>
 <p>The reducer can then be enhanced to automatically handle these mutations for you by tacking on
-the <code>binding</code> method:</p>
+the <code>binding(action:)</code> method:</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">settingsReducer</span> = <span class="variable">Reducer</span>&lt;<span class="variable">SettingsState</span>, <span class="variable">SettingsAction</span>, <span class="variable">SettingsEnvironment</span> {
   ...
@@ -1519,7 +1542,7 @@ the <code>binding</code> method:</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-06-14T14:57:49+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-06-28T11:59:09+0000">June 28, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

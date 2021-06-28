@@ -25,7 +25,7 @@
     <nav>
         <div class="wrapper">
             <h2>On This Page</h2>
-            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Nested Types</a></li><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#effect.init(_:)">init(_:​)</a></li><li class="initializer"><a href="#effect.init(value:)">init(value:​)</a></li><li class="initializer"><a href="#effect.init(error:)">init(error:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#effect.upstream">upstream</a></li><li class="variable"><a href="#effect.none">none</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#effect.receive(subscriber:)">receive(subscriber:​)</a></li><li class="function"><a href="#effect.future(_:)">future(_:​)</a></li><li class="function"><a href="#effect.result(_:)">result(_:​)</a></li><li class="function"><a href="#effect.run(_:)">run(_:​)</a></li><li class="function"><a href="#effect.concatenate(_:)">concatenate(_:​)</a></li><li class="function"><a href="#effect.concatenate(_:)">concatenate(_:​)</a></li><li class="function"><a href="#effect.merge(_:)">merge(_:​)</a></li><li class="function"><a href="#effect.merge(_:)">merge(_:​)</a></li><li class="function"><a href="#effect.fireandforget(_:)">fire​And​Forget(_:​)</a></li><li class="function"><a href="#effect.map(_:)">map(_:​)</a></li><li class="function"><a href="#effect.cancellable(id:cancelinflight:)">cancellable(id:​cancel​InFlight:​)</a></li><li class="function"><a href="#effect.cancel(id:)">cancel(id:​)</a></li><li class="function"><a href="#effect.debounce(id:for:scheduler:options:)">debounce(id:​for:​scheduler:​options:​)</a></li><li class="function"><a href="#effect.async(_:)">async(_:​)</a></li><li class="function"><a href="#effect.failing(_:)">failing(_:​)</a></li></ul></li></ol>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Nested Types</a></li><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#effect.init(_:)">init(_:​)</a></li><li class="initializer"><a href="#effect.init(value:)">init(value:​)</a></li><li class="initializer"><a href="#effect.init(error:)">init(error:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#effect.upstream">upstream</a></li><li class="variable"><a href="#effect.none">none</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#effect.receive(subscriber:)">receive(subscriber:​)</a></li><li class="function"><a href="#effect.future(_:)">future(_:​)</a></li><li class="function"><a href="#effect.result(_:)">result(_:​)</a></li><li class="function"><a href="#effect.run(_:)">run(_:​)</a></li><li class="function"><a href="#effect.concatenate(_:)">concatenate(_:​)</a></li><li class="function"><a href="#effect.concatenate(_:)">concatenate(_:​)</a></li><li class="function"><a href="#effect.merge(_:)">merge(_:​)</a></li><li class="function"><a href="#effect.merge(_:)">merge(_:​)</a></li><li class="function"><a href="#effect.fireandforget(_:)">fire​And​Forget(_:​)</a></li><li class="function"><a href="#effect.map(_:)">map(_:​)</a></li><li class="function"><a href="#effect.cancellable(id:cancelinflight:)">cancellable(id:​cancel​InFlight:​)</a></li><li class="function"><a href="#effect.cancel(id:)">cancel(id:​)</a></li><li class="function"><a href="#effect.debounce(id:for:scheduler:options:)">debounce(id:​for:​scheduler:​options:​)</a></li><li class="function"><a href="#effect.deferred(for:scheduler:options:)">deferred(for:​scheduler:​options:​)</a></li><li class="function"><a href="#effect.async(_:)">async(_:​)</a></li><li class="function"><a href="#effect.failing(_:)">failing(_:​)</a></li></ul></li></ol>
         </div>
     </nav>
 
@@ -40,16 +40,16 @@
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">Effect</span>&lt;<span class="variable">Output</span>, <span class="variable">Failure</span>: <span class="type">Error</span>&gt;: <span class="type">Publisher</span>  </body></html></code></pre>
 </div>
 <div class="summary" role="doc-abstract">
-    <p>The <code>Effect</code> type encapsulates a unit of work that can be run in the outside world, and can feed
-data back to the <code>Store</code>. It is the perfect place to do side effects, such as network requests,
-saving/loading from disk, creating timers, interacting with dependencies, and more.</p>
+    <p>The <code>Effect</code> type encapsulates a unit of work that can be run in the outside world, and can
+feed data back to the <code>Store</code>. It is the perfect place to do side effects, such as network
+requests, saving/loading from disk, creating timers, interacting with dependencies, and more.</p>
 
 </div>
 <div class="discussion">
-    <p>Effects are returned from reducers so that the <code>Store</code> can perform the effects after the reducer
-is done running. It is important to note that <code>Store</code> is not thread safe, and so all effects
-must receive values on the same thread, <strong>and</strong> if the store is being used to drive UI then it
-must receive values on the main thread.</p>
+    <p>Effects are returned from reducers so that the <code>Store</code> can perform the effects after the
+reducer is done running. It is important to note that <code>Store</code> is not thread safe, and so all
+effects must receive values on the same thread, <strong>and</strong> if the store is being used to drive UI
+then it must receive values on the main thread.</p>
 
 <p>An effect simply wraps a <code>Publisher</code> value and provides some convenience initializers for
 constructing some common types of effects.</p>
@@ -63,11 +63,11 @@ constructing some common types of effects.</p>
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: %11 Pages: 1 -->
+<!-- Title: %3 Pages: 1 -->
 <svg width="872pt" height="116pt"
  viewBox="0.00 0.00 872.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
-<title>%11</title>
+<title>%3</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-112 868,-112 868,4 -4,4"/>
 <!-- Effect -->
 <g id="node1" class="node structure current">
@@ -672,7 +672,7 @@ back into the store.</p>
 </div>
 <div class="discussion">
     <p>To turn an effect into a cancellable one you must provide an identifier, which is used in
-<code>Effect.cancel(id:)</code> to identify which in-flight effect should be canceled. Any hashable
+<code>Effect/cancel(id:)</code> to identify which in-flight effect should be canceled. Any hashable
 value can be used for the identifier, such as a string, but you can add a bit of protection
 against typos by defining a new type that conforms to <code>Hashable</code>, such as an empty struct:</p>
 
@@ -824,6 +824,69 @@ struct:</p>
   <p>An effect that publishes events only after a specified time elapses.</p>
 
 </div>
+<div role="article" class="function" id="effect.deferred(for:scheduler:options:)">
+    <h3>
+        <code><a href="#effect.deferred(for:scheduler:options:)">deferred(for:​scheduler:​options:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">deferred</span>&lt;<span class="variable">S</span>: <span class="type">Scheduler</span>&gt;(
+    <span class="variable">for</span> <span class="variable">dueTime</span>: <span class="type">S</span>.<span class="type">SchedulerTimeType</span>.<span class="type">Stride</span>,
+    <span class="variable">scheduler</span>: <span class="type">S</span>,
+    <span class="variable">options</span>: <span class="type">S</span>.<span class="type">SchedulerOptions</span>? = <span class="keyword">nil</span>
+  ) -&gt; <a href="/swift-composable-architecture/Effect"><span class="type">Effect</span></a>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Returns an effect that will be executed after given <code>dueTime</code>.</p>
+
+</div>
+<div class="discussion">
+    <html><body><pre class="highlight"><code><span class="keyword">case</span> <span class="keyword">let</span> .<span class="variable">textChanged</span>(<span class="variable">text</span>):
+  <span class="keyword">return</span> <span class="variable">environment</span>.<span class="variable">search</span>(<span class="variable">text</span>)
+    .<span class="variable">map</span>(<span class="variable">Action</span>.<span class="variable">searchResponse</span>)
+    .<span class="variable">deferred</span>(<span class="variable">for</span>: <span class="number literal">0.5</span>, <span class="variable">scheduler</span>: <span class="type">environment</span>.<span class="variable">mainQueue</span>)
+</code></pre></body></html>
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>upstream</th>
+    <td></td>
+    <td><p>the effect you want to defer.</p>
+</td>
+</tr>
+<tr>
+    <th>due​Time</th>
+    <td><code class="type">S.​Scheduler​Time​Type.​Stride</code></td>
+    <td><p>The duration you want to defer for.</p>
+</td>
+</tr>
+<tr>
+    <th>scheduler</th>
+    <td><code class="type">S</code></td>
+    <td><p>The scheduler you want to deliver the defer output to.</p>
+</td>
+</tr>
+<tr>
+    <th>options</th>
+    <td><code class="type">S.​Scheduler​Options?</code></td>
+    <td><p>Scheduler options that customize the effect's delivery of elements.</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>An effect that will be executed after <code>dueTime</code></p>
+
+</div>
 <div role="article" class="function" id="effect.async(_:)">
     <h3>
         <code><a href="#effect.async(_:)">async(_:​)</a></code>
@@ -947,7 +1010,7 @@ itself, that this particular action should not access this effect.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-06-14T14:57:49+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-06-28T11:59:09+0000">June 28, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

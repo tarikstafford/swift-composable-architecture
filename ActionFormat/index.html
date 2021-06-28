@@ -40,7 +40,7 @@
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">enum</span> <span class="type">ActionFormat</span>  </body></html></code></pre>
 </div>
 <div class="summary" role="doc-abstract">
-    <p>Determines how the string description of an action should be printed when using the <code>.debug()</code>
+    <p>Determines how the string description of an action should be printed when using the <code>Reducer/debug(prefix:state:action:environment:)</code>
 higher-order reducer.</p>
 
 </div>
@@ -60,7 +60,7 @@ higher-order reducer.</p>
 
 </div>
 <div class="discussion">
-    <html><body><pre class="highlight"><code><span class="variable">Action</span>.<span class="variable">screenA</span>(.<span class="variable">row</span>(<span class="variable">index</span>:, <span class="variable">action</span>: .<span class="variable">textChanged</span>(<span class="variable">query</span>:)))
+    <html><body><pre class="highlight"><code> <span class="variable">Action</span>.<span class="variable">screenA</span>(.<span class="variable">row</span>(<span class="variable">index</span>:, <span class="variable">action</span>: .<span class="variable">textChanged</span>(<span class="variable">query</span>:)))
 </code></pre></body></html>
 </div>
 </div>
@@ -77,14 +77,14 @@ any associated values, as well as the data held in the associated values:</p>
 
 </div>
 <div class="discussion">
-    <html><body><pre class="highlight"><code><span class="variable">Action</span>.<span class="variable">screenA</span>(
-  <span class="variable">ScreenA</span>.<span class="variable">row</span>(
-    <span class="variable">index</span>: <span class="number literal">1</span>,
-    <span class="variable">action</span>: <span class="type">RowAction</span>.<span class="variable">textChanged</span>(
-      <span class="variable">query</span>: <span class="string literal">"</span><span class="string literal">Hi</span><span class="string literal">"</span>
-    )
-  )
-)
+    <html><body><pre class="highlight"><code> <span class="variable">Action</span>.<span class="variable">screenA</span>(
+   <span class="variable">ScreenA</span>.<span class="variable">row</span>(
+     <span class="variable">index</span>: <span class="number literal">1</span>,
+     <span class="variable">action</span>: <span class="type">RowAction</span>.<span class="variable">textChanged</span>(
+       <span class="variable">query</span>: <span class="string literal">"</span><span class="string literal">Hi</span><span class="string literal">"</span>
+     )
+   )
+ )
 </code></pre></body></html>
 </div>
 </div>
@@ -97,7 +97,7 @@ any associated values, as well as the data held in the associated values:</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-06-14T14:57:49+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-06-28T11:59:09+0000">June 28, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

@@ -25,7 +25,7 @@
     <nav>
         <div class="wrapper">
             <h2>On This Page</h2>
-            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#switchstore.store">store</a></li><li class="variable"><a href="#switchstore.content">content</a></li><li class="variable"><a href="#switchstore.body">body</a></li></ul></li></ol>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></li><li class="initializer"><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#switchstore.store">store</a></li><li class="variable"><a href="#switchstore.content">content</a></li><li class="variable"><a href="#switchstore.body">body</a></li></ul></li></ol>
         </div>
     </nav>
 
@@ -70,8 +70,8 @@ a <code>CaseLet</code> view per case:</p>
   }
 }
 </code></pre></body></html>
-<p>If a <code>SwitchStore</code> does not exhaustively handle every case with a corresponding <code>CaseLet</code> view,
-a debug breakpoint will be raised when an unhandled case is encountered. To fall back on a
+<p>If a <code>SwitchStore</code> does not exhaustively handle every case with a corresponding <code>CaseLet</code>
+view, a debug breakpoint will be raised when an unhandled case is encountered. To fall back on a
 default view instead, introduce a <code>Default</code> view at the end of the <code>SwitchStore</code>:</p>
 
 <html><body><pre class="highlight"><code><span class="variable">SwitchStore</span>(<span class="keyword">self</span>.<span class="variable">store</span>) {
@@ -84,7 +84,7 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
 }
 </code></pre></body></html>
 <aside class="see also" title="See Also">
-    <p><code>Reducer.pullback</code>, a method that aids in transforming reducers that operate on each case of an enum into reducers that operate on the entire enum.</p>
+    <p><code>Reducer/pullback(state:action:environment:breakpointOnNil:_:_:)</code>, a method that aids in transforming reducers that operate on each case of an enum into reducers that operate on the entire enum.</p>
 
 </aside>
 </div>
@@ -96,11 +96,11 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: %105 Pages: 1 -->
+<!-- Title: %7 Pages: 1 -->
 <svg width="872pt" height="116pt"
  viewBox="0.00 0.00 872.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
-<title>%105</title>
+<title>%7</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-112 868,-112 868,4 -4,4"/>
 <!-- SwitchStore -->
 <g id="node1" class="node structure current">
@@ -162,17 +162,16 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
     &gt;</body></html></code></pre>
 </div>
 </div>
-<div role="article" class="initializer" id="switchstore.init(_:content:file:line:)">
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
     <h3>
-        <code><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></code>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
     </h3>
     <div class="declaration">
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>&gt;(
     <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
-    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> ()
-      -&gt; <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
     <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
-    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;
   )
   <span class="keyword">where</span>
     <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
@@ -214,21 +213,21 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
     &gt;</body></html></code></pre>
 </div>
 </div>
-<div role="article" class="initializer" id="switchstore.init(_:content:file:line:)">
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
     <h3>
-        <code><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></code>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
     </h3>
     <div class="declaration">
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>, <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>&gt;(
     <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
     <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
       (
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
       )
-    &gt;,
-    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
-    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
+    &gt;
   )
   <span class="keyword">where</span>
     <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
@@ -282,22 +281,22 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
     &gt;</body></html></code></pre>
 </div>
 </div>
-<div role="article" class="initializer" id="switchstore.init(_:content:file:line:)">
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
     <h3>
-        <code><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></code>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
     </h3>
     <div class="declaration">
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>, <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>, <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>&gt;(
     <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
     <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
       (
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;
       )
-    &gt;,
-    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
-    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
+    &gt;
   )
   <span class="keyword">where</span>
     <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
@@ -359,9 +358,9 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
     &gt;</body></html></code></pre>
 </div>
 </div>
-<div role="article" class="initializer" id="switchstore.init(_:content:file:line:)">
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
     <h3>
-        <code><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></code>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
     </h3>
     <div class="declaration">
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
@@ -371,6 +370,8 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
     <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>
   &gt;(
     <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
     <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
       (
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
@@ -378,9 +379,7 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
       )
-    &gt;,
-    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
-    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
+    &gt;
   )
   <span class="keyword">where</span>
     <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
@@ -450,9 +449,9 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
     &gt;</body></html></code></pre>
 </div>
 </div>
-<div role="article" class="initializer" id="switchstore.init(_:content:file:line:)">
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
     <h3>
-        <code><a href="#switchstore.init(_:content:file:line:)">init(_:​content:​file:​line:​)</a></code>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
     </h3>
     <div class="declaration">
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
@@ -463,6 +462,8 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
     <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>
   &gt;(
     <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
     <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
       (
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
@@ -471,9 +472,7 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
         <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;
       )
-    &gt;,
-    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
-    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
+    &gt;
   )
   <span class="keyword">where</span>
     <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
@@ -492,6 +491,490 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
         &gt;,
         <span class="type">_ConditionalContent</span>&lt;
           <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+          <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<a href="/swift-composable-architecture/_ExhaustivityCheckView"><span class="type">_ExhaustivityCheckView</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;&gt;
+        &gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>,
+    <span class="variable">DefaultContent</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;,
+        <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+          &gt;
+        &gt;,
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+          &gt;,
+          <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+        &gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+          &gt;
+        &gt;,
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+          &gt;,
+          <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<a href="/swift-composable-architecture/_ExhaustivityCheckView"><span class="type">_ExhaustivityCheckView</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;&gt;
+        &gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>,
+    <span class="variable">State7</span>, <span class="variable">Action7</span>, <span class="variable">Content7</span>,
+    <span class="variable">DefaultContent</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+        <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+          &gt;
+        &gt;,
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+            <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+          &gt;
+        &gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>,
+    <span class="variable">State7</span>, <span class="variable">Action7</span>, <span class="variable">Content7</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+          &gt;
+        &gt;,
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+            <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<a href="/swift-composable-architecture/_ExhaustivityCheckView"><span class="type">_ExhaustivityCheckView</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;&gt;
+          &gt;
+        &gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>,
+    <span class="variable">State7</span>, <span class="variable">Action7</span>, <span class="variable">Content7</span>,
+    <span class="variable">State8</span>, <span class="variable">Action8</span>, <span class="variable">Content8</span>,
+    <span class="variable">DefaultContent</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;,
+        <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+            &gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;
+            &gt;
+          &gt;
+        &gt;,
+        <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>,
+    <span class="variable">State7</span>, <span class="variable">Action7</span>, <span class="variable">Content7</span>,
+    <span class="variable">State8</span>, <span class="variable">Action8</span>, <span class="variable">Content8</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+            &gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;
+            &gt;
+          &gt;
+        &gt;,
+        <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<a href="/swift-composable-architecture/_ExhaustivityCheckView"><span class="type">_ExhaustivityCheckView</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;&gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:content:)">init(_:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>,
+    <span class="variable">State7</span>, <span class="variable">Action7</span>, <span class="variable">Content7</span>,
+    <span class="variable">State8</span>, <span class="variable">Action8</span>, <span class="variable">Content8</span>,
+    <span class="variable">State9</span>, <span class="variable">Action9</span>, <span class="variable">Content9</span>,
+    <span class="variable">DefaultContent</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State9</span>, <span class="type">Action9</span>, <span class="type">Content9</span>&gt;,
+        <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+            &gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;
+            &gt;
+          &gt;
+        &gt;,
+        <span class="type">_ConditionalContent</span>&lt;
+          <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State9</span>, <span class="type">Action9</span>, <span class="type">Content9</span>&gt;,
+          <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<span class="type">DefaultContent</span>&gt;
+        &gt;
+      &gt;
+    &gt;</body></html></code></pre>
+</div>
+</div>
+<div role="article" class="initializer" id="switchstore.init(_:file:line:content:)">
+    <h3>
+        <code><a href="#switchstore.init(_:file:line:content:)">init(_:​file:​line:​content:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>&lt;
+    <span class="variable">State1</span>, <span class="variable">Action1</span>, <span class="variable">Content1</span>,
+    <span class="variable">State2</span>, <span class="variable">Action2</span>, <span class="variable">Content2</span>,
+    <span class="variable">State3</span>, <span class="variable">Action3</span>, <span class="variable">Content3</span>,
+    <span class="variable">State4</span>, <span class="variable">Action4</span>, <span class="variable">Content4</span>,
+    <span class="variable">State5</span>, <span class="variable">Action5</span>, <span class="variable">Content5</span>,
+    <span class="variable">State6</span>, <span class="variable">Action6</span>, <span class="variable">Content6</span>,
+    <span class="variable">State7</span>, <span class="variable">Action7</span>, <span class="variable">Content7</span>,
+    <span class="variable">State8</span>, <span class="variable">Action8</span>, <span class="variable">Content8</span>,
+    <span class="variable">State9</span>, <span class="variable">Action9</span>, <span class="variable">Content9</span>
+  &gt;(
+    <span class="keyword">_</span> <span class="variable">store</span>: <a href="/swift-composable-architecture/Store"><span class="type">Store</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;,
+    <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>,
+    <span class="attribute">@</span><span class="type">ViewBuilder</span> <span class="variable">content</span>: <span class="attribute">@</span><span class="attribute">escaping</span> () -&gt; <span class="type">TupleView</span>&lt;
+      (
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;,
+        <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State9</span>, <span class="type">Action9</span>, <span class="type">Content9</span>&gt;
+      )
+    &gt;
+  )
+  <span class="keyword">where</span>
+    <span class="type">Content</span> == <a href="/swift-composable-architecture/WithViewStore"><span class="type">WithViewStore</span></a>&lt;
+      <span class="type">State</span>,
+      <span class="type">Action</span>,
+      <span class="type">_ConditionalContent</span>&lt;
+        <span class="type">_ConditionalContent</span>&lt;
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State1</span>, <span class="type">Action1</span>, <span class="type">Content1</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State2</span>, <span class="type">Action2</span>, <span class="type">Content2</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State3</span>, <span class="type">Action3</span>, <span class="type">Content3</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State4</span>, <span class="type">Action4</span>, <span class="type">Content4</span>&gt;
+            &gt;
+          &gt;,
+          <span class="type">_ConditionalContent</span>&lt;
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State5</span>, <span class="type">Action5</span>, <span class="type">Content5</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State6</span>, <span class="type">Action6</span>, <span class="type">Content6</span>&gt;
+            &gt;,
+            <span class="type">_ConditionalContent</span>&lt;
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State7</span>, <span class="type">Action7</span>, <span class="type">Content7</span>&gt;,
+              <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State8</span>, <span class="type">Action8</span>, <span class="type">Content8</span>&gt;
+            &gt;
+          &gt;
+        &gt;,
+        <span class="type">_ConditionalContent</span>&lt;
+          <a href="/swift-composable-architecture/CaseLet"><span class="type">CaseLet</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>, <span class="type">State9</span>, <span class="type">Action9</span>, <span class="type">Content9</span>&gt;,
           <a href="/swift-composable-architecture/Default"><span class="type">Default</span></a>&lt;<a href="/swift-composable-architecture/_ExhaustivityCheckView"><span class="type">_ExhaustivityCheckView</span></a>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;&gt;
         &gt;
       &gt;
@@ -535,7 +1018,7 @@ default view instead, introduce a <code>Default</code> view at the end of the <c
 
     <footer>
         <p>
-    Generated on <time datetime="2021-06-14T14:57:50+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-06-28T11:59:09+0000">June 28, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

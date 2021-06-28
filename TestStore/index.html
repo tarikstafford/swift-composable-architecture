@@ -121,7 +121,8 @@ mutable value of the state before the action was sent, and it is our job to muta
 to match the state after the action was sent. In this case the <code>count</code> field changes to <code>1</code>.</p>
 
 <p>For a more complex example, consider the following bare-bones search feature that uses the
-<code>.debounce</code> operator to wait for the user to stop typing before making a network request:</p>
+<code>Effect/debounce(id:for:scheduler:options:)</code> operator to wait for the user to stop typing
+before making a network request:</p>
 
 <html><body><pre class="highlight"><code><span class="keyword">struct</span> <span class="type">SearchState</span>: <span class="type">Equatable</span> {
   <span class="keyword">var</span> <span class="variable">query</span> = <span class="string literal">"</span><span class="string literal"/><span class="string literal">"</span>
@@ -316,7 +317,7 @@ not expect it would cause a test failure.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-06-14T14:57:50+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-06-28T11:59:09+0000">June 28, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

@@ -84,9 +84,9 @@ used anywhere it makes sense to observe state and send actions.</p>
     </a>
 </dt>
 <dd>
-    <p>The <code>Effect</code> type encapsulates a unit of work that can be run in the outside world, and can feed
-data back to the <code>Store</code>. It is the perfect place to do side effects, such as network requests,
-saving/loading from disk, creating timers, interacting with dependencies, and more.</p>
+    <p>The <code>Effect</code> type encapsulates a unit of work that can be run in the outside world, and can
+feed data back to the <code>Store</code>. It is the perfect place to do side effects, such as network
+requests, saving/loading from disk, creating timers, interacting with dependencies, and more.</p>
 
 </dd>
 <dt class="structure">
@@ -178,7 +178,9 @@ collections of state.</p>
     </a>
 </dt>
 <dd>
-    <p>An array of elements that can be identified by a given key path.</p>
+    <p>An array of elements that can be identified by a given key path.
+<code> A useful container of state that is intended to interface with SwiftUI/</code>ForEach`. For example,
+your application may model a counter in an identifiable fashion:</p>
 
 </dd>
 <dt class="structure">
@@ -265,7 +267,7 @@ store state.</p>
     </a>
 </dt>
 <dd>
-    <p>Determines how the string description of an action should be printed when using the <code>.debug()</code>
+    <p>Determines how the string description of an action should be printed when using the <code>Reducer/debug(prefix:state:action:environment:)</code>
 higher-order reducer.</p>
 
 </dd>
@@ -352,7 +354,7 @@ higher-order reducer.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-06-14T14:57:50+0000">June 14, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-06-28T11:59:09+0000">June 28, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
