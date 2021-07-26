@@ -1388,7 +1388,7 @@ case:</p>
 <p>The reducer can then be enhanced to automatically handle these mutations for you by tacking on
 the <code>binding(action:)</code> method:</p>
 
-<html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">settingsReducer</span> = <span class="variable">Reducer</span>&lt;<span class="variable">SettingsState</span>, <span class="variable">SettingsAction</span>, <span class="variable">SettingsEnvironment</span> {
+<html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">settingsReducer</span> = <span class="variable">Reducer</span>&lt;<span class="type">SettingsState</span>, <span class="type">SettingsAction</span>, <span class="type">SettingsEnvironment</span>&gt; {
   ...
 }
 .<span class="variable">binding</span>(<span class="variable">action</span>: /<span class="variable">SettingsAction</span>.<span class="variable">binding</span>)
@@ -1426,7 +1426,7 @@ the <code>binding(action:)</code> method:</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-07-16T19:27:13+0000">July 16, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-07-26T17:15:08+0000">July 26, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
