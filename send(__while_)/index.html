@@ -38,9 +38,9 @@
 
 <div class="declaration">
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">send</span>(
-    <span class="keyword">_</span> <span class="variable">action</span>: <span class="type">Action</span>,
-    <span class="variable">while</span> <span class="variable">predicate</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">Bool</span>
-  ) </body></html></code></pre>
+      <span class="keyword">_</span> <span class="variable">action</span>: <span class="type">Action</span>,
+      <span class="variable">while</span> <span class="variable">predicate</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">State</span>) -&gt; <span class="type">Bool</span>
+    ) </body></html></code></pre>
 </div>
 <div class="summary" role="doc-abstract">
     <p>Sends an action into the store and then suspends while a piece of state is <code>true</code>.</p>
@@ -75,7 +75,7 @@ gesture is performed on a list. The domain and logic for this feature can be mod
     <span class="keyword">return</span> <span class="variable">environment</span>.<span class="variable">fetch</span>()
       .<span class="variable">map</span>(<span class="variable">Action</span>.<span class="variable">receivedResponse</span>)
 
-  <span class="keyword">case</span> <span class="keyword">let</span> .<span class="variable">receivedResponse</span>(<span class="variable">responsne</span>):
+  <span class="keyword">case</span> <span class="keyword">let</span> .<span class="variable">receivedResponse</span>(<span class="variable">response</span>):
     <span class="type">state</span>.<span class="variable">isLoading</span> = <span class="keyword">false</span>
     <span class="variable">state</span>.<span class="variable">response</span> = <span class="variable">response</span>
     <span class="keyword">return</span> .<span class="variable">none</span>
@@ -146,7 +146,7 @@ can be fed back into the store.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-07-26T19:28:25+0000">July 26, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-08-16T13:57:27+0000">August 16, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

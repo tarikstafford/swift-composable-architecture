@@ -391,7 +391,7 @@ effect never completed.</p>
     <span class="variable">action</span> <span class="variable">toLocalAction</span>: <span class="type">CasePath</span>&lt;<span class="type">GlobalAction</span>, (<span class="type">Int</span>, <span class="type">Action</span>)&gt;,
     <span class="variable">environment</span> <span class="variable">toLocalEnvironment</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">GlobalEnvironment</span>) -&gt; <span class="type">Environment</span>,
     <span class="variable">breakpointOnNil</span>: <span class="type">Bool</span> = <span class="keyword">true</span>,
-    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#fileID</span>,
     <span class="keyword">_</span> <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">GlobalState</span>, <span class="type">GlobalAction</span>, <span class="type">GlobalEnvironment</span>&gt;  </body></html></code></pre>
 </div>
@@ -757,7 +757,7 @@ large domain.</p>
     <span class="variable">action</span> <span class="variable">toLocalAction</span>: <span class="type">CasePath</span>&lt;<span class="type">GlobalAction</span>, <span class="type">Action</span>&gt;,
     <span class="variable">environment</span> <span class="variable">toLocalEnvironment</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">GlobalEnvironment</span>) -&gt; <span class="type">Environment</span>,
     <span class="variable">breakpointOnNil</span>: <span class="type">Bool</span> = <span class="keyword">true</span>,
-    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#fileID</span>,
     <span class="keyword">_</span> <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">GlobalState</span>, <span class="type">GlobalAction</span>, <span class="type">GlobalEnvironment</span>&gt;  </body></html></code></pre>
 </div>
@@ -969,7 +969,7 @@ only send child actions when the child domain is available.</p>
     <div class="declaration">
 <pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">optional</span>(
     <span class="variable">breakpointOnNil</span>: <span class="type">Bool</span> = <span class="keyword">true</span>,
-    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#fileID</span>,
     <span class="keyword">_</span> <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;
     <span class="type">State</span>?, <span class="type">Action</span>, <span class="type">Environment</span>
@@ -1158,7 +1158,7 @@ child domain is non-<code>nil</code>.</p>
     <span class="variable">action</span> <span class="variable">toLocalAction</span>: <span class="type">CasePath</span>&lt;<span class="type">GlobalAction</span>, (<span class="type">ID</span>, <span class="type">Action</span>)&gt;,
     <span class="variable">environment</span> <span class="variable">toLocalEnvironment</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">GlobalEnvironment</span>) -&gt; <span class="type">Environment</span>,
     <span class="variable">breakpointOnNil</span>: <span class="type">Bool</span> = <span class="keyword">true</span>,
-    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#fileID</span>,
     <span class="keyword">_</span> <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">GlobalState</span>, <span class="type">GlobalAction</span>, <span class="type">GlobalEnvironment</span>&gt;  </body></html></code></pre>
 </div>
@@ -1245,7 +1245,7 @@ reducers that can modify the collection.</p>
     <span class="variable">action</span> <span class="variable">toLocalAction</span>: <span class="type">CasePath</span>&lt;<span class="type">GlobalAction</span>, (<span class="type">Key</span>, <span class="type">Action</span>)&gt;,
     <span class="variable">environment</span> <span class="variable">toLocalEnvironment</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">GlobalEnvironment</span>) -&gt; <span class="type">Environment</span>,
     <span class="variable">breakpointOnNil</span>: <span class="type">Bool</span> = <span class="keyword">true</span>,
-    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#file</span>,
+    <span class="keyword">_</span> <span class="variable">file</span>: <span class="type">StaticString</span> = <span class="keyword">#fileID</span>,
     <span class="keyword">_</span> <span class="variable">line</span>: <span class="type">UInt</span> = <span class="keyword">#line</span>
   ) -&gt; <a href="/swift-composable-architecture/Reducer"><span class="type">Reducer</span></a>&lt;<span class="type">GlobalState</span>, <span class="type">GlobalAction</span>, <span class="type">GlobalEnvironment</span>&gt;  </body></html></code></pre>
 </div>
@@ -1426,7 +1426,7 @@ the <code>binding(action:)</code> method:</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-07-26T19:28:25+0000">July 26, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-08-16T13:57:27+0000">August 16, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
