@@ -47,9 +47,10 @@
 
 </div>
 <div class="discussion">
-    <p>This method can be used to interact with async/await code, allowing you to suspend while work
-is being performed in an effect. One common example of this is using SwiftUI's <code>.refreshable</code>
-method, which shows a loading indicator on the screen while work is being performed.</p>
+    <p>This method can be used to interact with async/await code, allowing you to suspend while
+work is being performed in an effect. One common example of this is using SwiftUI's
+<code>.refreshable</code> method, which shows a loading indicator on the screen while work is being
+performed.</p>
 
 <p>For example, suppose we wanted to load some data from the network when a pull-to-refresh
 gesture is performed on a list. The domain and logic for this feature can be modeled like so:</p>
@@ -107,13 +108,14 @@ view modifier to enhance the list with pull-to-refresh capabilities:</p>
 </code></pre></body></html>
 <p>Here we've used the <code>send(_:while:)</code> method to suspend while the <code>isLoading</code> state is
 <code>true</code>. Once that piece of state flips back to <code>false</code> the method will resume, signaling to
-<code>.refreshable</code> that the work has finished which will cause the loading indicator to disappear.</p>
+<code>.refreshable</code> that the work has finished which will cause the loading indicator to
+disappear.</p>
 
 <p><strong>Note:</strong> <code>ViewStore</code> is not thread safe and you should only send actions to it from the
-main thread. If you are wanting to send actions on background threads due to the fact that the
-reducer is performing computationally expensive work, then a better way to handle this is to
-wrap that work in an <code>Effect</code> that is performed on a background thread so that the result
-can be fed back into the store.</p>
+main thread. If you are wanting to send actions on background threads due to the fact that
+the reducer is performing computationally expensive work, then a better way to handle this
+is to wrap that work in an <code>Effect</code> that is performed on a background thread so that the
+result can be fed back into the store.</p>
 
 </div>
 <h4>Parameters</h4>
@@ -146,7 +148,7 @@ can be fed back into the store.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-08-16T13:57:27+0000">August 16, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-08-23T02:51:22+0000">August 23, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
