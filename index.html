@@ -25,7 +25,7 @@
     <nav>
         <div class="wrapper">
             <h2>On This Page</h2>
-            <ol><li><a href="#classes">Classes</a></li><li><a href="#structures">Structures</a></li><li><a href="#enumerations">Enumerations</a></li><li><a href="#typealiases">Typealiases</a></li><li><a href="#functions">Functions</a></li><li><a href="#extensions">Extensions</a></li></ol>
+            <ol><li><a href="#classes">Classes</a></li><li><a href="#structures">Structures</a></li><li><a href="#enumerations">Enumerations</a></li><li><a href="#protocols">Protocols</a></li><li><a href="#typealiases">Typealiases</a></li><li><a href="#functions">Functions</a></li><li><a href="#extensions">Extensions</a></li></ol>
         </div>
     </nav>
 
@@ -142,6 +142,16 @@ generic is the type of actions that can be sent from tapping on a button in the 
 </dt>
 <dd>
     
+</dd>
+<dt class="structure">
+    <a href="/swift-composable-architecture/BindableState" title="structure - BindableState">
+        Bindable​State
+    </a>
+</dt>
+<dd>
+    <p>A property wrapper type that can designate properties of app state that can be directly
+bindable in SwiftUI views.</p>
+
 </dd>
 <dt class="structure">
     <a href="/swift-composable-architecture/BindingAction" title="structure - BindingAction">
@@ -264,8 +274,8 @@ store state.</p>
     </a>
 </dt>
 <dd>
-    <p>Determines how the string description of an action should be printed when using the <code>Reducer/debug(prefix:state:action:environment:)</code>
-higher-order reducer.</p>
+    <p>Determines how the string description of an action should be printed when using the
+<code>Reducer/debug(_:state:action:actionFormat:environment:)</code> higher-order reducer.</p>
 
 </dd>
 <dt class="enumeration">
@@ -275,6 +285,20 @@ higher-order reducer.</p>
 </dt>
 <dd>
     
+</dd>
+        </dl>
+    </section>
+    <section id="protocols">
+        <h2>Protocols</h2>
+        <dl>
+            <dt class="protocol">
+    <a href="/swift-composable-architecture/BindableAction" title="protocol - BindableAction">
+        Bindable​Action
+    </a>
+</dt>
+<dd>
+    <p>An action type that exposes a <code>binding</code> case for the purpose of reducing.</p>
+
 </dd>
         </dl>
     </section>
@@ -349,7 +373,7 @@ higher-order reducer.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-08-24T21:24:40+0000">August 24, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-09-06T15:20:37+0000">September 6, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

@@ -83,9 +83,9 @@ profile, then we can model the domain like this:</p>
 }
 
 <span class="keyword">enum</span> <span class="type">AppAction</span> {
-  <span class="keyword">case</span> <span class="variable">activity</span>(<span class="type">ActivityState</span>)
-  <span class="keyword">case</span> <span class="variable">profile</span>(<span class="type">ProfileState</span>)
-  <span class="keyword">case</span> <span class="variable">search</span>(<span class="type">SearchState</span>)
+  <span class="keyword">case</span> <span class="variable">activity</span>(<span class="type">ActivityAction</span>)
+  <span class="keyword">case</span> <span class="variable">profile</span>(<span class="type">ProfileAction</span>)
+  <span class="keyword">case</span> <span class="variable">search</span>(<span class="type">SearchAction</span>)
 }
 </code></pre></body></html>
 <p>We can construct a view for each of these domains by applying <code>scope(state:action:)-9iai9</code>
@@ -643,7 +643,7 @@ to navigate to can be held as an optional value in the parent, and when that val
 
     <footer>
         <p>
-    Generated on <time datetime="2021-08-24T21:24:40+0000">August 24, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-09-06T15:20:37+0000">September 6, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
