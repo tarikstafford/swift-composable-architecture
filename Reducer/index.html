@@ -388,7 +388,7 @@ effect never completed.</p>
 <pre class="highlight"><code><html><body><span class="attribute">@</span><span class="attribute">available</span>(
       *, <span class="variable">deprecated</span>,
       <span class="variable">message</span>:
-        <span class="string literal">"'Reducer.binding()' no longer takes an explicit extract function and instead relies on 'BindableAction'"</span>
+        <span class="string literal">"'Reducer.binding()' no longer takes an explicit extract function and instead the reducer's 'Action' type must conform to 'BindableAction'"</span>
     )
     <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>(<span class="variable">action</span> <span class="variable">toBindingAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">Action</span>) -&gt; <a href="/swift-composable-architecture/BindingAction"><span class="type">BindingAction</span></a>&lt;<span class="type">State</span>&gt;?) -&gt; <span class="keyword">Self</span></body></html></code></pre>
 </div>
@@ -401,7 +401,7 @@ effect never completed.</p>
 <pre class="highlight"><code><html><body><span class="attribute">@</span><span class="attribute">available</span>(
       *, <span class="variable">deprecated</span>,
       <span class="variable">message</span>:
-        <span class="string literal">"'Reducer.binding()' no longer takes an explicit extract function and instead relies on 'BindableAction'. Upgrade to Xcode 12.5 or greater for access to 'Reducer.binding()' and 'BindableAction'."</span>
+        <span class="string literal">"'Reducer.binding()' no longer takes an explicit extract function and instead the reducer's 'Action' type must conform to 'BindableAction'. Upgrade to Xcode 12.5 or greater for access to 'Reducer.binding()' and 'BindableAction'."</span>
     )
     <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">binding</span>(<span class="variable">action</span> <span class="variable">toBindingAction</span>: <span class="attribute">@</span><span class="attribute">escaping</span> (<span class="type">Action</span>) -&gt; <a href="/swift-composable-architecture/BindingAction"><span class="type">BindingAction</span></a>&lt;<span class="type">State</span>&gt;?) -&gt; <span class="keyword">Self</span></body></html></code></pre>
 </div>
@@ -1404,7 +1404,7 @@ parent reducers that can modify the dictionary.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-09-06T15:20:37+0000">September 6, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-09-07T16:30:47+0000">September 7, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
