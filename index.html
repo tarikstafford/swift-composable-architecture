@@ -108,16 +108,6 @@ an action, and describes what <code>Effect</code>s should be executed later by t
 
 </dd>
 <dt class="structure">
-    <a href="/swift-composable-architecture/ActionSheetState" title="structure - ActionSheetState">
-        Action​Sheet​State
-    </a>
-</dt>
-<dd>
-    <p>A data type that describes the state of an action sheet that can be shown to the user. The
-<code>Action</code> generic is the type of actions that can be sent from tapping on a button in the sheet.</p>
-
-</dd>
-<dt class="structure">
     <a href="/swift-composable-architecture/AlertState" title="structure - AlertState">
         Alert​State
     </a>
@@ -160,6 +150,16 @@ bindable in SwiftUI views.</p>
 </dt>
 <dd>
     <p>An action that describes simple mutations to some root state at a writable key path.</p>
+
+</dd>
+<dt class="structure">
+    <a href="/swift-composable-architecture/ConfirmationDialogState" title="structure - ConfirmationDialogState">
+        Confirmation​Dialog​State
+    </a>
+</dt>
+<dd>
+    <p>A data type that describes the state of a confirmation dialog that can be shown to the user. The
+<code>Action</code> generic is the type of actions that can be sent from tapping on a button in the sheet.</p>
 
 </dd>
 <dt class="structure">
@@ -279,8 +279,16 @@ store state.</p>
 
 </dd>
 <dt class="enumeration">
-    <a href="/swift-composable-architecture/AlertState_ButtonType" title="enumeration - AlertState.ButtonType">
-        Alert​State.​Button​Type
+    <a href="/swift-composable-architecture/AlertState_ButtonRole" title="enumeration - AlertState.ButtonRole">
+        Alert​State.​Button​Role
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="enumeration">
+    <a href="/swift-composable-architecture/ConfirmationDialogState_Visibility" title="enumeration - ConfirmationDialogState.Visibility">
+        Confirmation​Dialog​State.​Visibility
     </a>
 </dt>
 <dd>
@@ -306,8 +314,8 @@ store state.</p>
         <h2>Typealiases</h2>
         <dl>
             <dt class="typealias">
-    <a href="/swift-composable-architecture/FormAction" title="typealias - FormAction">
-        Form​Action
+    <a href="/swift-composable-architecture/ActionSheetState" title="typealias - ActionSheetState">
+        Action​Sheet​State
     </a>
 </dt>
 <dd>
@@ -373,7 +381,7 @@ store state.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-09-15T01:19:26+0000">September 15, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-09-20T17:32:47+0000">September 20, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
