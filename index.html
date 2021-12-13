@@ -98,6 +98,14 @@ requests, saving/loading from disk, creating timers, interacting with dependenci
     
 </dd>
 <dt class="structure">
+    <a href="/swift-composable-architecture/TestStore_Step" title="structure - TestStore.Step">
+        Test​Store.​Step
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="structure">
     <a href="/swift-composable-architecture/Reducer" title="structure - Reducer">
         Reducer
     </a>
@@ -246,15 +254,6 @@ store state.</p>
 
 </dd>
 <dt class="structure">
-    <a href="/swift-composable-architecture/TestStore_Step" title="structure - TestStore.Step">
-        Test​Store.​Step
-    </a>
-</dt>
-<dd>
-    <p>A single step of a <code>TestStore</code> assertion.</p>
-
-</dd>
-<dt class="structure">
     <a href="/swift-composable-architecture/StorePublisher" title="structure - StorePublisher">
         Store​Publisher
     </a>
@@ -377,6 +376,33 @@ store state.</p>
     <p>Suspends while a predicate on state is <code>true</code>.</p>
 
 </dd>
+<dt class="function">
+    <a href="/swift-composable-architecture/send(__while_)" title="function - send(_:while:)">
+        send(_:​while:​)
+    </a>
+</dt>
+<dd>
+    <p>Sends an action into the store and then suspends while a piece of state is <code>true</code>.</p>
+
+</dd>
+<dt class="function">
+    <a href="/swift-composable-architecture/send(__animation_while_)" title="function - send(_:animation:while:)">
+        send(_:​animation:​while:​)
+    </a>
+</dt>
+<dd>
+    <p>Sends an action into the store and then suspends while a piece of state is <code>true</code>.</p>
+
+</dd>
+<dt class="function">
+    <a href="/swift-composable-architecture/suspend(while_)" title="function - suspend(while:)">
+        suspend(while:​)
+    </a>
+</dt>
+<dd>
+    <p>Suspends while a predicate on state is <code>true</code>.</p>
+
+</dd>
         </dl>
     </section>
 <section id="extensions">
@@ -405,7 +431,7 @@ store state.</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-12-03T21:11:14+0000">December 3, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-12-13T19:08:43+0000">December 13, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>
