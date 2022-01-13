@@ -1,4 +1,3 @@
-import ComposableArchitecture
 import SwiftUI
 
 extension NavigationLink {
@@ -15,7 +14,7 @@ extension NavigationLink {
   ///   - isActive: Determines if the link is active or inactive.
   ///   - label: The link's label.
   /// - Returns: Navigation link wrapped in a `WithViewStore`.
-  static func store<State, Action, DestinationContent>(
+  public static func store<State, Action, DestinationContent>(
     _ store: Store<State?, Action>,
     destination: @escaping (_ destinationStore: Store<State, Action>) -> DestinationContent,
     action: @escaping (_ isActive: Bool) -> Void,

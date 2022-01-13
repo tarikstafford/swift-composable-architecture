@@ -4,7 +4,7 @@
 ///
 /// - Parameter inputClosure: The input closure.
 /// - Returns: Modified closure.
-func replayNonNil<A, B>(_ inputClosure: @escaping (A) -> B?) -> (A) -> B? {
+public func replayNonNil<A, B>(_ inputClosure: @escaping (A) -> B?) -> (A) -> B? {
   var lastNonNilOutput: B? = nil
   return { inputValue in
     guard let outputValue = inputClosure(inputValue) else {
@@ -18,6 +18,6 @@ func replayNonNil<A, B>(_ inputClosure: @escaping (A) -> B?) -> (A) -> B? {
 /// Creates a closure (T?) -> T? that returns last non-`nil` T passed to it.
 ///
 /// - Returns: The closure.
-func replayNonNil<T>() -> (T?) -> T? {
+public func replayNonNil<T>() -> (T?) -> T? {
   replayNonNil { $0 }
 }

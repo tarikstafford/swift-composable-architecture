@@ -1,5 +1,3 @@
-import ComposableArchitecture
-
 extension Reducer {
   /// Replaces `nil` state with provided value.
   ///
@@ -9,7 +7,7 @@ extension Reducer {
   ///
   /// - Parameter replacement: The replacement state value.
   /// - Returns: A reducer that works on `State`, `Action`, `Environment`.
-  func replaceNilState<S>(
+  public func replaceNilState<S>(
     with replacement: @escaping @autoclosure () -> S?
   ) -> Self where State == Optional<S> {
     .init { state, action, environment in

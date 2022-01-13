@@ -1,5 +1,3 @@
-import ComposableArchitecture
-
 extension Reducer {
   /// Combines the reducer with a reducer that works on optionally presented `LocalState`.
   ///
@@ -17,7 +15,7 @@ extension Reducer {
   ///   - toLocalAction: A case path that can extract/embed `LocalAction` from `Action`.
   ///   - toLocalEnvironment: A function that transforms `Environment` into `LocalEnvironment`.
   /// - Returns: A reducer that works on `State`, `Action`, `Environment`.
-  func presents<LocalState, LocalAction, LocalEnvironment>(
+  public func presents<LocalState, LocalAction, LocalEnvironment>(
     _ localReducer: Reducer<LocalState, LocalAction, LocalEnvironment>,
     state toLocalState: WritableKeyPath<State, LocalState?>,
     action toLocalAction: CasePath<Action, LocalAction>,
